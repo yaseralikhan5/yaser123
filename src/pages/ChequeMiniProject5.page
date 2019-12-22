@@ -1,0 +1,13 @@
+<apex:page standardcontroller="Invoice__c" showHeader="false" renderAs="pdf">
+<apex:form >
+    <apex:pageblock >
+   Invoice date:<apex:inputTextarea value="{!Invoice__c.Invoice_date__c}" />
+        <br/>
+       Invoice due amount: <apex:inputTextarea value="{!Invoice__c.Due_Amount__c}" />
+        <br/>
+     Invoice status:   <apex:inputTextarea value="{!Invoice__c.Status__c}" />
+       
+        
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="integrationaug29">
+    <apex:form >
+        latitute and longitude: <apex:inputtext value="{!latLng}"/>
+        Search Destination: <apex:inputtext value="{!search}"/>
+        Key: <apex:inputtext value="{!key}"/>
+        <apex:commandButton value="Submit" action="{!invoke}"/>
+        result=<apex:inputtextarea cols="15" rows="15" value="{!result}"/>
+    </apex:form>
+</apex:page>

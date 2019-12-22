@@ -1,0 +1,6 @@
+<apex:page controller="aug19ex1" >
+    <apex:form >
+    {!$Organization.Name}
+        <apex:commandButton value="submit" action="{!action1}"/>
+    </apex:form>
+</apex:page>

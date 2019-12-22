@@ -1,0 +1,25 @@
+<apex:page controller="aug12test1">
+    <apex:form >
+    <apex:pageblock >
+        search:<apex:inputText value="{!search}"/>
+        <apex:commandButton value="Search" action="{!invoke1}"/>
+        <br/>
+        <apex:pageBlockTable value="{!wrap}" var="a" >
+            <apex:column headerValue="Click"><apex:inputCheckbox value="{!a.flag}">
+                <apex:actionSupport event="onclick" action="{!invoke2}"/></apex:inputCheckbox></apex:column>
+        <apex:column value="{!a.wrapcon.firstname}" />
+         <apex:column value="{!a.wrapcon.lastname}" />
+         <apex:column value="{!a.wrapcon.email}" />
+         <apex:column value="{!a.wrapcon.phone}" />
+        </apex:pageBlockTable>
+        <br/>
+        <apex:pageBlockTable value="{!con}" var="b">
+        <apex:column value="{!b.firstname}" />
+         <apex:column value="{!b.lastname}" />
+         <apex:column value="{!b.email}" />
+         <apex:column value="{!b.phone}" />
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    
+    </apex:form>v
+</apex:page>

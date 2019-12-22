@@ -1,0 +1,4 @@
+<aura:component >
+    <c:invokecmp4/>
+    <c:invokecmp5/>
+</aura:component>

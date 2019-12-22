@@ -1,0 +1,13 @@
+<aura:component controller="parentchild">
+    <aura:attribute name="lastname" type="string"/>
+    <aura:attribute name="firstname" type="string"/>
+    <aura:attribute name="accid" type="string"/>
+    <lightning:card title="Contact Details">
+    <aura:set attribute="footer">
+        <lightning:button label="Save" onclick="{!c.ContactSave}"/>
+        </aura:set>
+        <lightning:input label="Enter lastname" value="{!v.lastname}" aura:id="lname"/>
+        <lightning:input label="Enter Firstname" value="{!v.firstname}" aura:id="fname"/>
+    </lightning:card>
+	
+</aura:component>

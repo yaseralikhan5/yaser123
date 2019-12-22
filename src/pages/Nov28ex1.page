@@ -1,0 +1,64 @@
+<apex:page id="page" controller="Nov28ex1" >
+    <apex:form id="fm">
+        <apex:actionFunction name="fun1" action="{!invoke}">
+            <apex:param name="param1" value=""/>
+        </apex:actionFunction>
+        <script src="/soap/ajax/47.0/connection.js">
+        </script>
+        <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded",
+        function() {
+            alert("hello");
+            //fun1('yaser');
+        });
+       function fun3(){
+           var contents=/@/;
+            var value1=document.getElementById("page:fm:it3").value;
+            alert(value1);
+            if(contents.test(value1)==false){
+                event.preventDefault();
+                document.getElementById("page:fm:it3").innerHTML="Invalid email";
+                }
+            }
+        windows.addEventListener('cut',
+        function(){
+            event.preventDefault();
+            alert('cut is not allowed');
+            }
+    function fun(){
+       sforce.connection.sessionId='{!GETSESSIONID()}';
+        var result1=sforce.connection.query('select id,name,industry,rating from account');
+        var result2=result1.getArray('records');
+        var result3;
+        /* var date1=new Date().toLocaleTimeString();
+        alert(window.location.href);
+        alert(window.navigator.userAgent);
+        alert(window.screenX);
+        alert(window.screenY);
+        window.confirm('meesage1');
+        window.print();
+        //document.write("this is a initial message");
+        alert(date1);*/
+        for(var i=0;i<result2.length;i++){
+            if(result2[i].Name=='yaser lightning test5'){
+                alert(result2[i].Industry);
+                var industry=result2[i].Industry;
+                //document.getElementById('page:fm:button1').click();
+                fun1(industry);
+            document.getElementById("page:fm:it1").value=result2[i].Industry;
+                break;
+                }
+            }
+    }
+       
+    </script>
+    <apex:commandButton value="Submit" onclick="fun()"/>
+       Javascript Value: <apex:inputText id="it1" />
+       <!--<apex:commandButton id="button1" Value="Apex Submit" action="{!invoke}" />-->
+        Apex code value: <apex:inputtext id="it2" value="{!result4}" />
+        
+        <br/>
+        <br/>
+        Email: <apex:inputText id="it3"  onchange="fun3()"/>
+        </apex:form>
+</apex:page>

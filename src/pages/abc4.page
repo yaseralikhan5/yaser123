@@ -1,0 +1,15 @@
+<apex:page controller="abc4">
+    <apex:form >
+    <apex:dataTable value="{!invoices}" var="a">
+        <apex:column headerValue="name" value="{!a.name}"/>
+        <apex:column headerValue="due amount" value="{!a.Due_Amount__c}"/>
+       <apex:column headerValue="invoice amount" value="{!a.Invoice_Amount__c}"/>
+        <apex:column headerValue="status" value="{!a.Status__c}"/>
+        <apex:column headerValue="company name" value="{!a.Company__r.name}"/>
+        
+        
+        
+        </apex:dataTable>
+    
+    </apex:form>
+</apex:page>

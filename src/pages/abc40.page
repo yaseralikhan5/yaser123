@@ -1,0 +1,21 @@
+<apex:page id="page" controller="AccountIndustryFieldPopulate">
+    <apex:form id="fm" >
+        <script>
+        function func(myid){
+            var rows=myid.split(':');
+            document.getElementById('page:fm:pb:pbt:'+rows[4]+':it').value="this is a test data";
+            }
+        </script>
+    <apex:pageblock id="pb" >
+        <apex:pageBlockTable id="pbt" value="{!list1}" var="a">
+            <apex:column > <apex:inputText id="it" value="{!a.value}"/></apex:column>
+             <apex:column > <apex:inputText id="itv" value="{!a.value2}" onchange="func(this.id)"/></apex:column>
+            <apex:column ><apex:commandButton value="submit"  action="{!invoke}"/></apex:column></apex:pageBlockTable>
+       
+        
+       <!-- <apex:selectList size="1">
+        <apex:selectOptions value="{!opt}"></apex:selectOptions>
+        </apex:selectList>-->
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

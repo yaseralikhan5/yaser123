@@ -1,0 +1,28 @@
+<apex:page standardController="Account" extensions="ExtensionStandardControllerWithErrorMsg" >
+    <apex:form >
+    <apex:sectionHeader title="Detail Page" subtitle="Account Page"/>
+    <apex:pageMessages />
+    <apex:pageblock >
+    <apex:pageBlockButtons >
+        <apex:commandButton value="submit" action="{!invoke}" dir="RTL"/></apex:pageBlockButtons>
+        <apex:pageBlockSection title="Account Details">
+            <apex:inputfield value="{!Account.name}"/>
+            <apex:inputfield value="{!Account.industry}"/>
+            <apex:inputfield value="{!Account.phone}"/>
+            <apex:inputfield value="{!Account.rating}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection title="Contact Details">
+            <apex:inputfield value="{!con.firstname}"/>
+            <apex:inputfield value="{!con.lastname}"/>
+            <apex:inputfield value="{!con.phone}"/>
+            <apex:inputfield value="{!con.email}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection title="Opportunity Details">
+            <apex:inputfield value="{!opt.name}"/>
+            <apex:inputfield value="{!opt.stagename}"/>
+            <apex:inputfield value="{!opt.amount}"/>
+            <apex:inputfield value="{!opt.closedate}"/>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

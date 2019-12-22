@@ -1,0 +1,48 @@
+<apex:page controller="inboundex1" id="page">
+    <apex:form id="fm">
+        <apex:actionFunction name="fun" action="{!populate}">
+        <apex:param name="totale" assignTo="{!GrandTotal}" value=""/>
+        </apex:actionFunction>
+        <script>
+        function call(d){
+            var rows=d.split(':');   
+          
+            var sal=document.getElementById('page:fm:pb:pbt:'+rows[4]+':it3').value;          
+            var inc=document.getElementById('page:fm:pb:pbt:'+rows[4]+':it4').value;           
+            var total=parseInt(sal)+parseInt(inc);
+            document.getElementById('page:fm:pb:pbt:'+rows[4]+':it5').value=total; 
+            }
+   
+        function cal(ids){
+           
+            var row=ids.split(':');
+            var tot=document.getElementById('page:fm:pb:pbt:'+row[4]+':it5').value; 
+             var t=document.getElementById('page:fm:pb:total').value;
+            if(t=='' || t=='NaN'){
+                t='0';
+                }
+            var gtotal=parseInt(t)+parseInt(tot);
+            var totale=parseInt(gtotal);
+            document.getElementById('page:fm:pb:total').value=gtotal;
+            if(totale!='' || totale!='NaN' || total!=0){
+            fun(totale);
+                }
+            }
+        </script>
+    <apex:pageblock id="pb">
+        <apex:pageBlockTable value="{!wrap}" var="a" id="pbt">
+            <apex:column headerValue="Name"><apex:inputtext value="{!a.name}" id="it1"/></apex:column>
+            <apex:column headerValue="Age"><apex:inputtext value="{!a.age}" id="it2" /></apex:column>
+            <apex:column headerValue="Salary"><apex:inputtext value="{!a.salary}" id="it3" onchange="call(this.id)"/>
+            </apex:column>      
+            <apex:column headerValue="Incentive"><apex:inputtext value="{!a.incentive}" id="it4" onchange="call(this.id),cal(this.id)" />
+            </apex:column>
+            <apex:column headerValue="Total"><apex:inputtext value="{!a.total}" id="it5"/></apex:column>
+            
+        </apex:pageBlockTable>
+        Grand Total:<apex:inputtext id="total" dir="RTL"/>
+        Testing action function:<apex:inputtext id="total1" value="{!GrandTotal}"/>
+        count:<apex:inputtext value="{!count}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

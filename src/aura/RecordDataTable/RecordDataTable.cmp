@@ -1,0 +1,16 @@
+<aura:component >
+	<lightning:layout>
+    <lightning:layoutitem size="12">
+        <c:RecordViewDataTable1/>
+        </lightning:layoutitem>
+    </lightning:layout>
+    <lightning:layout>
+        <lightning:layoutitem size="8">
+            <c:RecordViewDataTable/>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="4">
+            <c:RecordViewDataTable2/>
+        </lightning:layoutitem>
+    </lightning:layout>
+    
+</aura:component>

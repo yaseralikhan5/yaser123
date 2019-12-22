@@ -1,0 +1,15 @@
+<apex:page standardController="Customer_BANK__c">
+    <apex:form >
+   <apex:pageblock title="Loan records">
+        <apex:pageblocktable value="{!Customer_BANK__c.Loan_Bank__r}" var="a">
+             
+            
+            <apex:column value="{!a.Loan_Type__c}"/>
+            <apex:column value="{!a.Applied_Date__c}"/>
+            <apex:column value="{!a.Security__c}"/>
+       </apex:pageblocktable>
+        
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

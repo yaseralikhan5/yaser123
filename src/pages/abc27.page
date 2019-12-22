@@ -1,0 +1,21 @@
+<apex:page id="page" controller="JavascriptDisplayingDataInDynamicRows">
+<apex:form id="fm">
+    <script>
+    function call(myid){
+        var rows=myid.split(':');
+        //var amount=document.getElementById('page:fm:pb:pbt:'+rows[4]+':amount').value;
+        //var quantity=document.getElementById('page:fm:pb:pbt:'+rows[4]+':quantity').value;
+        //var result=parseInt(amount)*parseInt(quantity);
+        document.getElementById('page:fm:pb:pbt:'+rows[4]+':total').value="this is it";
+        }
+    </script>
+    <apex:pageBlock id="pb">
+        <apex:pageBlockTable id="pbt" value="{!acc}" var="a">
+            <apex:column headerValue="name"><apex:inputtext id="name" value="{!a.name}"/></apex:column>
+            <apex:column headerValue="amount"><apex:inputtext id="amount" value="{!a.amount}" onchange="call(this.id)"/></apex:column>
+            <apex:column headerValue="quantity"><apex:inputtext id="quantity" value="{!a.quantity}" onchange="call(this.id)"/></apex:column>
+            <apex:column headerValue="total"><apex:inputtext id="total" value="{!a.total}"/></apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

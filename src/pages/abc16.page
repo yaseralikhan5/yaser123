@@ -1,0 +1,42 @@
+<apex:page id="page" controller="JavascriptCheckboxSelectAll" >
+    <apex:form id="fm">
+        
+        <apex:pageblock id="pb1">
+    <apex:selectList value="{!selected}" size="1">
+        <apex:selectOptions value="{!opp}"></apex:selectOptions>
+      </apex:selectList>
+            </apex:pageblock>
+        <script type="text/javascript">
+        function call(obj,cbid){
+        var cb=document.getElementsByTagName("input");
+            alert(cb.length);
+            for(var i=0;i<cb.length;i++){
+                if(cb[i].id.indexOf(cbid)!=-1){
+                    cb[i].checked=obj.checked;
+                    }
+                }
+        }
+        </script>
+       
+    <apex:pageblock id="pb2" >
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Update" action="{!create}"/>
+        </apex:pageBlockButtons>
+        <apex:dataTable id="pbt" value="{!rap}" var="a2" border="5" rules="cols" cellpadding="8" cellspacing="8">
+            <apex:column ><apex:facet name="header"><apex:inputCheckbox onclick="call(this,'cb2')" ></apex:inputCheckbox>
+               </apex:facet><apex:inputCheckbox id="cb2"  value="{!a2.flag}" /><apex:actionSupport event="onchange" action="{!create}" reRender="fm"/>
+            </apex:column>
+          
+        <apex:column headerValue="Name" value="{!a2.accounts.name}"/>
+        <apex:column headerValue="Industry" value="{!a2.accounts.industry}"/>
+        <apex:column headerValue="phone" value="{!a2.accounts.phone}"/></apex:dataTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
+
+<!--
+value="{!f}"
+ <apex:actionsupport event="onchange" action="{!change}" rerender="fm"/>
+value="{!a2.flag}"
+ <apex:actionSupport event="onchange" action="{!create}" reRender="fm"/>
+-->

@@ -1,0 +1,14 @@
+<apex:page controller="WrapperWithRenderedExample">
+<apex:form >
+    <apex:dataTable value="{!rap}" var="a" border="6" cellpadding="8" cellspacing="8" rules="cols">
+        <apex:column headerValue="Name"><apex:inputtext value="{!a.name}"/></apex:column>
+        <apex:column headerValue="company"><apex:inputtext value="{!a.company}"/></apex:column>
+        <apex:column ><apex:commandLink action="{!create}" value="Save"/></apex:column>
+    </apex:dataTable>
+    <apex:dataTable value="{!rap}" var="a" border="6" cellpadding="8" cellspacing="8" rules="cols" rendered="{! !isnull(rap)}">
+        <apex:column headerValue="Name" value="{!a.name}"/>
+        <apex:column headerValue="Company" value="{!a.company}"/>
+     </apex:dataTable>
+    </apex:form>
+
+</apex:page>

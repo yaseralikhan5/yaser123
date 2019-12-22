@@ -1,0 +1,22 @@
+<apex:page controller="ExceptionWithPageReference">
+    <apex:form >
+        <apex:messages />
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!submit}" value="submit"/>
+        </apex:pageBlockButtons>
+        <apex:pageblocksection >
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Name"></apex:outputLabel>
+            <apex:inputText value="{!acc.name}"/>
+            </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="industry"></apex:outputLabel>
+            <apex:inputText value="{!acc.industry}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageblocksection>
+    
+    
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

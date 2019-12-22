@@ -1,0 +1,4 @@
+<apex:page controller="component44" >
+    <c:component44 object="{!acc}" fields="{!accfields}"/>
+    <c:component44 object="{!con}" fields="{!confields}"/>
+</apex:page>

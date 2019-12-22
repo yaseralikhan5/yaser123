@@ -1,0 +1,5 @@
+<aura:component >
+     
+    <aura:handler event="c:aug03event" action="{!c.callme}"/>
+	{!v.body}
+</aura:component>

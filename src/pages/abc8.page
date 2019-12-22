@@ -1,0 +1,10 @@
+<apex:page controller="DMLToWrapperClass">
+    <apex:form >
+    <apex:dataTable value="{!rap}" var="w">
+        <apex:column headerValue="Name" value="{!w.a.name}"/>
+         <apex:column headerValue="industry" value="{!w.a.industry}"/>
+         
+        </apex:dataTable>
+    
+    </apex:form>
+</apex:page>

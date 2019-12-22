@@ -1,0 +1,25 @@
+<apex:page title="practise9" standardController="Loan_BANK__c" recordSetVar="list">
+<apex:sectionHeader title="Display list"/>
+    <apex:tabPanel activeTabClass="a">
+    <apex:tab name="a" label="Datatable">
+        <apex:dataTable value="{!list}" var="obj" frame="border" border="3" rules="rows" cellpadding="10" cellspacing="5" width="700" >
+        <apex:column headerValue="Loan Type" value="{!obj.Loan_Type__c}"/>
+            <apex:column headerValue="Security" value="{!obj.Security__c}"/>
+        </apex:dataTable>
+        </apex:tab>
+    <apex:tab label="datalist" name="b">
+        <apex:dataList value="{!list}" var="obj1">
+        {!obj1.Loan_Type__c}
+        {!obj1.Security__c}
+        
+        </apex:dataList>
+        
+        </apex:tab>
+    <apex:tab name="c" label="repeat">
+        <apex:repeat value="{!list}" var="obj3">
+        {!obj3.Loan_Type__c}</apex:repeat>
+        
+        </apex:tab>
+    </apex:tabPanel>
+
+</apex:page>

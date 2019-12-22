@@ -1,0 +1,11 @@
+<apex:page controller="excelaccount" contentType="application/vnd.ms-excel#account.xls" cache="true">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageblocktable value="{!acc}" var="a">
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.industry}"/>
+        
+        </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

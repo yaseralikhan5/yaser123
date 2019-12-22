@@ -1,0 +1,13 @@
+<apex:page controller="oct5ex1">
+    <apex:form >
+    <apex:pageblock >
+        <apex:inputTextarea cols="60" rows="20" value="{!sum1}"/>
+        <br/>
+        <br/>
+        <apex:inputtext value="{!token1}" size="50"/>
+        <br/>
+        <br/>
+        <apex:inputTextarea cols="60" rows="20" value="{!sum2}"/>
+        </apex:pageblock>
+        </apex:form>
+</apex:page>

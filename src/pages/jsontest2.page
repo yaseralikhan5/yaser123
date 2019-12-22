@@ -1,0 +1,12 @@
+<apex:page controller="jsontest2">
+    <apex:form >
+    <apex:pageblock >
+        {!name}
+        {!age}
+       <!-- <apex:pageBlockTable value="{!jsonmap}" var="a">
+        <apex:column value="{!a}"/>
+            <apex:column value="{!jsonmap[a]}"/>
+        </apex:pageBlockTable>-->
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="aval" type="integer"/>
+    <aura:attribute name="bval" type="integer"/>
+    <aura:attribute name="result" type="integer"/>
+    <lightning:input aura:id="aval" label="Enter value" value="{!v.aval}"/>
+    <lightning:input aura:id="bval" label="Enter value"  value="{!v.bval}"/>
+    <lightning:input aura:id="result" label="Result" value="{!v.result}"/>
+    <lightning:button aura:id="button1" label="Add" onclick="{!c.addme}"/>
+    <lightning:button aura:id="button2" label="Mul" onclick="{!c.mulme}"/>
+    <lightning:button aura:id="button3" label="Cancel" onclick="{!c.cancel}"/>
+</aura:component>

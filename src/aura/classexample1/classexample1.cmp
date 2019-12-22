@@ -1,0 +1,9 @@
+<aura:component controller="Apex_Example_2">
+        <aura:attribute name="empName" type="String" />
+        <aura:attribute name="salary"  type="Decimal" />
+        <aura:attribute name="age" type="Integer" />
+        <lightning:input label="EnterName" aura:id="name" value="{!v.empName}" />
+        <lightning:input label="EnterSalary" aura:id="salary" value="{!v.salary}" />
+        <lightning:input label="EnterName" aura:id="age" value="{!v.age}" />
+        <lightning:button label="Submit" onclick="{!c.show}" />
+	</aura:component>

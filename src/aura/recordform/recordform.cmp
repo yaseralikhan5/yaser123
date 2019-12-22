@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="fields" type="string[]" default="['Name','Industry','Rating','Phone']"/>
+    <lightning:recordForm recordId="0010o00002KLvyY" objectApiName="Account" fields="{!v.fields}" colums="2" mode="edit"/>
+</aura:component>

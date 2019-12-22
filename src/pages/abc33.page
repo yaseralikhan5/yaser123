@@ -1,0 +1,15 @@
+<apex:page standardController="account" extensions="ExtensionSetControllerAccount" recordSetVar="a" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Delete" action="{!invoke}" />
+       </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!acc}" var="ac">
+             <apex:column value="{!ac.name}"/>
+             <apex:column value="{!ac.industry}"/>
+             <apex:column value="{!ac.phone}"/>
+             <apex:column value="{!ac.rating}"/>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

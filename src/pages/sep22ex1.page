@@ -1,0 +1,54 @@
+<apex:page standardController="Account" readOnly="true" recordSetVar="list">
+    <apex:form >
+        <apex:tabPanel >
+            <apex:tab label="Tab1">
+    <apex:pageblock >
+        <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+            Name:<apex:inputfield value="{!Account.Name}"/>
+            </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+            Industry: <apex:inputField value="{!Account.Industry}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+            Rating: <apex:inputfield value="{!account.Rating}"/>
+            </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+            Phone: <apex:inputfield value="{!account.Phone}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Cancel" action="{!Cancel}" />
+            <apex:commandButton value="view" action="{!View}"/>
+        </apex:pageBlockButtons>
+        </apex:pageblock>
+                </apex:tab>
+            <apex:tab label="Tab2">
+            <apex:dataTable value="{!list}" var="a" border="5" cellpadding="10" cellspacing="10">
+                <apex:column ><apex:facet name="header"> <apex:inputCheckbox />
+                    </apex:facet><apex:inputCheckbox /></apex:column>
+                <apex:column headerValue="Name" value="{!a.name}"/>
+                <apex:column headervalue="Industry" value="{!a.Industry}"/>
+                <apex:column headervalue="Rating" value="{!a.Rating}"/>
+                <apex:column headervalue="Phone" value="{!a.Phone}"/>
+                <apex:column ><apex:commandLink value="Edit" action="{!URLFOR($Action.Account.Edit,a.id)}"/>
+                    &nbsp;|&nbsp;
+                    <apex:commandLink value="Delete" action="{!URLFOR($Action.Account.Delete,a.id)}"/>
+                </apex:column>
+                <apex:column headerValue="Contacts">
+                <apex:dataTable value="{!a.contacts}" var="con" border="2" cellpadding="3" cellspacing="3">
+                    <apex:column value="{!con.firstname}" />
+                    <apex:column value="{!con.lastname}" />
+                    <apex:column value="{!con.email}"/>
+                    </apex:dataTable>
+                </apex:column>
+                
+                </apex:dataTable>
+               
+            </apex:tab>
+            </apex:tabPanel>
+    </apex:form>
+</apex:page>

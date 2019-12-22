@@ -1,0 +1,29 @@
+<aura:component controller="SOQL_Example_Two" >
+    <aura:attribute name="accounts" type="Object" />
+    <aura:attribute name="fields" type="Object" />
+    <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account'}" />
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}" />
+    <lightning:layout>
+    	<lightning:layoutItem size="4" padding="around-small">
+        	<div class="boxone">
+            	<lightning:card title="Account">
+                    <div class="three">
+                    <lightning:input label="AccountName" value="{!v.acc.Name}" />
+                	<lightning:input label="Industry" value="{!v.acc.Industry}" />
+                    <lightning:input label="Rating" value="{!v.acc.Rating}" />
+                    <lightning:input label="Phone" value="{!v.acc.Phone}" />
+                    </div>
+                    <aura:set attribute="footer">
+                        <lightning:button label="Save" onclick="{!c.show}" />
+                    </aura:set>
+                 
+                </lightning:card>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="8" padding="around-small">
+        	<div class="boxtwo">
+                <lightning:dataTable data="{!v.accounts}" columns="{!v.fields}" keyField="id" />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

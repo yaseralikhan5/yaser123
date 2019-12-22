@@ -1,0 +1,16 @@
+<aura:component controller="aug27apex">
+    <aura:attribute name="aval" type="integer"/>
+    <aura:attribute name="bval" type="integer"/>
+    <aura:attribute name="result" type="integer"/>
+    <lightning:card title="Details">
+    <aura:set attribute="footer">
+        <lightning:button label="add" onclick="{!c.add}"/>
+        <lightning:button label="mul" onclick="{!c.mul}"/>
+        </aura:set>
+    <div>
+        <lightning:input label="enter a" aura:id="a"/>
+        <lightning:input label="enter b" aura:id="b"/>
+        </div>
+        result={!v.result}
+    </lightning:card>
+</aura:component>

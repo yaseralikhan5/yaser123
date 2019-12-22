@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:sectionHeader title="account" rendered="true" subtitle="currency" help="www.google.com"/>
+    this is a header example<br/>
+</apex:page>

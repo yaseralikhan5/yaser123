@@ -1,0 +1,25 @@
+<apex:page controller="apex_example3">
+    <apex:form >
+        <apex:pagemessages />
+        <apex:sectionHeader title="Account and contact"/>
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!create}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account">
+                <apex:inputField value="{!acc.name}"/>
+                <apex:inputField value="{!acc.industry}"/>
+                <apex:inputField value="{!acc.phone}"/>
+                <apex:inputField value="{!acc.rating}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="contact">
+                <apex:inputField value="{!con.AssistantName}"/>
+                <apex:inputField value="{!con.FirstName}"/>
+                <apex:inputField value="{!con.LastName}"/>
+                <apex:inputField value="{!con.Email}"/>
+                <apex:inputField value="{!con.phone}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

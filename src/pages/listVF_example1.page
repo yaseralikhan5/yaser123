@@ -1,0 +1,40 @@
+<apex:page controller="list_example1">
+    <apex:form >
+    	<apex:dataTable value="{!rap}" var="a" cellpadding="10" width="800" rules="rows" frame="border" id="dt">
+            <apex:column headerValue="Name">
+                <apex:inputText value="{!a.name}" />
+            </apex:column>
+             <apex:column headerValue="description">
+                <apex:inputText value="{!a.description}" />
+            </apex:column>
+             <apex:column headerValue="industry">
+                <apex:inputText value="{!a.industry}" />
+            </apex:column>
+             <apex:column headerValue="phone">
+                <apex:inputText value="{!a.phone}" />
+            </apex:column>
+            <apex:column headerValue="Action">
+                <apex:commandLink value="Add" action="{!create}" reRender="dt"/>
+            </apex:column>
+        </apex:dataTable>
+    
+    </apex:form>
+</apex:page>
+
+
+
+
+<!--<apex:page controller="list_example1">
+<apex:form >
+    <apex:sectionHeader title="rapper class"/>
+    <apex:dataTable value="{!rap}" var="a" border="5" cellspacing="5" cellpadding="5" rules="cols">
+        <apex:column headerValue="name">
+            <apex:inputText value="{!a.name}"/></apex:column>
+        <apex:column headerValue="Industry"><apex:inputText value="{!a.industry}"/></apex:column>
+        <apex:column headerValue="Phone"><apex:inputText value="{!a.phone}"/></apex:column>
+        <apex:column headerValue="Description"><apex:inputText value="{!a.description}"/></apex:column>
+        <apex:column headerValue="action"><apex:commandLink action="{!create}"/></apex:column>
+    </apex:dataTable>
+    
+    </apex:form>
+</apex:page>-->

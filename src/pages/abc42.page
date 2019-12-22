@@ -1,0 +1,17 @@
+<apex:page controller="abc42">
+    <apex:form >
+        <apex:pageblock >
+    <apex:pageBlockTable value="{!acc}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+        </apex:pageBlockTable>
+        
+        <apex:pageBlockTable value="{!con}" var="b">
+        <apex:column value="{!b.firstname}"/>
+            <apex:column value="{!b.lastname}"/>
+            <apex:column value="{!b.phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="oct28RestApiEx1">
+    <apex:form >
+    <apex:pageblock >
+        ClientId: <apex:inputtext value="{!clientid}"/>
+        clientSecret: <apex:inputText value="{!clientsecret}"/>
+        <apex:commandButton value="Getcode" action="{!invoke1}"/>
+        <br/>
+        <br/>
+        Code:<apex:inputtext value="{!code}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

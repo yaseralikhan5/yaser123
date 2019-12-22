@@ -1,0 +1,93 @@
+<apex:page sidebar="false" title="Practise" standardController="Loan_BANK__c">
+    <apex:sectionHeader title="student" subtitle="New Student"/>
+    <apex:form >
+    <apex:pageBlock helpTitle="help me" helpUrl="www.google.com" tabStyle="Opportunity" mode="Detail">
+        <apex:pageblockbuttons location="top" >
+            <apex:commandbutton value="Save" action="{!save}" rerender="refresh"/>
+            <apex:commandbutton value="Cancel" action="{!Cancel}"/>
+        </apex:pageblockbuttons>  
+   
+        <apex:pageBlockSection columns="1" title="Loan Details_detail mode"  >
+            <apex:outputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:outputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+     
+        <apex:pageBlockSection columns="1" title="Loan Details in edit mode" id="refresh">
+            <apex:inputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:inputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+             Loan type={!Loan_BANK__c.Loan_Type__c}<br/>
+             Security={!Loan_BANK__c.Security__c}<br/>
+             
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+         <apex:pageBlock helpTitle="help me" helpUrl="www.google.com" tabStyle="Opportunity" mode="main detail">
+        <apex:pageblockbuttons location="top" >
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:commandbutton value="Cancel" action="{!Cancel}"/>
+        </apex:pageblockbuttons>  
+   
+        <apex:pageBlockSection columns="1" title="Loan Details_main detail mode"  >
+            <apex:outputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:outputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+       
+        <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+            <apex:inputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:inputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+             Loan type={!Loan_BANK__c.Loan_Type__c}<br/>
+             Security={!Loan_BANK__c.Security__c}<br/>
+             
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+         <apex:pageBlock helpTitle="help me" helpUrl="www.google.com" tabStyle="Opportunity" mode="edit">
+        <apex:pageblockbuttons location="top" >
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:commandbutton value="Cancel" action="{!Cancel}"/>
+        </apex:pageblockbuttons>  
+        
+        <apex:pageBlockSection columns="1" title="Loan Details_edit mode"  >
+            <apex:outputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:outputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+ 
+        <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+            <apex:inputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:inputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+             Loan type={!Loan_BANK__c.Loan_Type__c}<br/>
+             Security={!Loan_BANK__c.Security__c}<br/>
+             
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+         <apex:pageBlock helpTitle="help me" helpUrl="www.google.com" tabStyle="Opportunity" mode="inlineedit">
+        <apex:pageblockbuttons location="top" >
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:commandbutton value="Cancel" action="{!Cancel}"/>
+        </apex:pageblockbuttons>  
+        
+        <apex:pageBlockSection columns="1" title="Loan Details_inlineEdit"  >
+            <apex:outputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:outputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+            <apex:inputfield value="{!Loan_BANK__c.Loan_Type__c}"/>
+            <apex:inputfield value="{!Loan_BANK__c.Security__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="1" title="Loan Details in edit mode" >
+             Loan type={!Loan_BANK__c.Loan_Type__c}<br/>
+             Security={!Loan_BANK__c.Security__c}<br/>
+             
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

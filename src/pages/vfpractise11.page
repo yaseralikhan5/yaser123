@@ -1,0 +1,21 @@
+<apex:page standardController="Customer_BANK__c" recordSetVar="list" renderAs="pdf" showHeader="false">
+<apex:form >
+<apex:pageblock >
+    
+      <apex:datatable value="{!list}" var="a">
+
+          
+          <apex:column >
+             <apex:pageblocksection title="{!a.FirstName__c}"></apex:pageblocksection>
+               <apex:dataList value="{!a.loan_bank__r}" var="loan">
+    {!loan.Loan_Type__c}
+    </apex:dataList>
+          </apex:column>
+    </apex:datatable>
+        
+   
+   
+    
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

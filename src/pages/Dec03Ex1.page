@@ -1,0 +1,50 @@
+<apex:page id="page" >
+    <apex:form id="fm">
+    
+    <script type="text/javascript">
+var __sfdcSessionId = '{!GETSESSIONID()}';
+
+</script>
+<script src="../../soap/ajax/47.0/connection.js"
+type="text/javascript"></script>
+<script type="text/javascript">
+        window.onload=fun;
+        function fun(){
+            // var final;
+            // var final1=document.getElementById('page:fm:pb:pbs1:sl1').value;
+            var result2='';
+            
+var result = sforce.connection.describeSObject("Opportunity");
+for (var i=0; i<result.fields.length; i++) {
+  var field = result.fields[i];
+
+  if(field.name == 'StageName'){
+      var oPicklistVals = field.picklistValues;
+       for (var b=0; b<oPicklistVals.length; b++) 
+       { 
+        console.log(oPicklistVals[b].value);
+           result2=result2+oPicklistVals[b].value;
+           // final1.add(new Option(oPicklistVals[b].value,oPicklistVals[b].value));
+       }
+  }
+    
+    
+}
+            console.log(result2);
+            // console.log(final1);
+            //document.getElementById('page:fm:pb:pbs1:sl1').innerHTML=final1;
+            document.getElementById('page:fm:pb:pbs2:ip1').innerHTML=result2;
+        }
+    </script>
+    <apex:pageblock id="pb">
+    <apex:pageBlockSection id="pbs1">
+       <!-- <apex:selectList size="1">
+        <apex:selectOption id="sl1" itemLabel="none" itemValue="none"></apex:selectOption>
+        </apex:selectList>-->
+        </apex:pageBlockSection> 
+        <apex:pageBlockSection id="pbs2">
+          values:  <apex:outputlabel id="ip1" />
+        </apex:pageBlockSection>
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

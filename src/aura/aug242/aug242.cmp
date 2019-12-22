@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="phone" type="string"/>
+    <aura:attribute name="industry" type="string"/>
+    <aura:handler event="c:account_first" action="{!c.callme}"/>
+    <lightning:card title="account_details" iconname="standard:account">
+    <div>
+        name={!v.name}
+        phone={!v.phone}
+        phone={!v.industry}
+        </div>  
+    </lightning:card>
+</aura:component>

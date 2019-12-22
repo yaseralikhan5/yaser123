@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:overlayLibrary aura:id="myblock"/>
+    <lightning:button label="Submit" onclick="{!c.show}"/>
+</aura:component>

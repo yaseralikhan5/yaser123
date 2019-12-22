@@ -1,0 +1,11 @@
+<apex:page title="practise2" standardController="Loan_BANK__c" >
+    <apex:form >
+    <apex:pageblock title="Loan">
+        <apex:pageBlockSection >
+            <apex:inputfield value="{!Loan_BANK__c.customer__r.FirstName__c}"/>
+        
+        </apex:pageBlockSection>
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

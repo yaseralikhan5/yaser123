@@ -1,0 +1,14 @@
+<aura:component implements="force:hasrecordid,flexipage:availableforrecordhome">
+    <aura:attribute name="con" type="contact"/>
+    <aura:attribute name="newcon" type="object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show1}"/>
+    <aura:attribute name="fields" type="list" default='["FirstName","LastName","Email","Phone"]'/>
+    <force:recorddata aura:id="recordtest" recordId="{!v.recordId}"
+                    fields="{!v.fields}" targetfields="{!v.con}"
+                    targetrecord="{!v.newcon}" mode="EDIT"/>
+    <lightning:card title="Contact">
+        <lightning:input label="FirstName" value="{!v.con.FirstName}"/>
+        <lightning:input label="LastName" value="{!v.con.lastname}"/>
+        <lightning:input label="Phone" value="{!v.con.phone}"/>
+    </lightning:card>
+</aura:component>

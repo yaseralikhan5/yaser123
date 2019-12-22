@@ -1,0 +1,12 @@
+<apex:page controller="oct7ex2" >
+    <apex:pageblock >
+    <apex:pageBlockTable value="{!mapcon}" var="a">
+        <apex:column headervalue="Account Name" value="{!a}"/>
+        <apex:column headervalue="List of contact">
+            <apex:pageBlockTable value="{!mapcon[a]}" var="b">
+            <apex:column value="{!b.lastname}"/>
+            </apex:pageBlockTable>
+        </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:page>

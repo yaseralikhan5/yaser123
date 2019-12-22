@@ -1,0 +1,6 @@
+.THIS.one {
+    width:token(width);
+        height:token(height);
+        color:token(color);
+    background:token(background);
+}

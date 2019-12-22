@@ -1,0 +1,37 @@
+<apex:page controller="PageRedirectWithData" id="page">
+    <apex:form id="fm" >
+        <apex:actionFunction action="{!invoke}" name="fun">
+        <apex:param name="name" assignTo="{!name}" value=""/>
+            <apex:param name="age" assignTo="{!age}" value=""/>
+        </apex:actionFunction>
+    <apex:pageblock id="pb">
+        <script>
+        function call(){
+            var name=document.getElementById('page:fm:pb:pbs2:name').value;
+            var age=document.getElementById('page:fm:pb:pbs2:age').value;
+            if(name=='' && age==''){
+                alert('please enter the name and age');
+                }
+            else
+                {
+                    fun(name,age);
+                    }
+            
+            }
+        
+        </script>
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Next" action="{!next}"/></apex:pageBlockButtons>
+        <apex:pageBlockSection >
+              <apex:inputField value="{!accounts.name}"/>
+            <apex:inputfield value="{!accounts.phone}"/>
+            <apex:inputfield value="{!accounts.fax}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="pbs2" >
+              <apex:inputtext value="{!name}" id="name" onchange="call()"/>
+            <apex:inputtext value="{!age}" id="age" onchange="call()"/>
+            <apex:inputtext value="{!result}" id="result"/>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

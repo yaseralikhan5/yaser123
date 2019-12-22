@@ -1,0 +1,27 @@
+<aura:component controller="aug19ex1" access="global" >
+    <aura:attribute name="fields" type="object"/>
+    <aura:attribute name="accounts" type="object"/>
+    <aura:attribute name="maxrowcount" type="integer" default="5"/>
+    <aura:attribute name="count" type="integer"/>
+    <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account'}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    <lightning:layout>
+    <Lightning:layoutitem size="4">
+        <lightning:card title="Account">
+            <lightning:input label="Enter name" value="{!v.acc.Name}" aura:id="name"/>
+            <lightning:input label="Enter industry" value="{!v.acc.Industry}" aura:id="industry"/>
+            <lightning:input label="Enter Rating" value="{!v.acc.Rating}" aura:id="Rating"/>
+            <aura:set attribute="footer">
+                <lightning:button label="Insert" onclick="{!c.invoke}"/>
+            </aura:set>
+    </lightning:card>
+        </Lightning:layoutitem>
+        <lightning:layoutitem size="8">
+            <lightning:input label="Rows Selected" value="{!v.count}"/>
+    <lightning:datatable data="{!v.accounts}" columns="{!v.fields}"
+                         onrowselection="{!c.rowselection}"
+                         maxrowselection="{!v.maxrowcount}"
+                         keyField="id"/>
+        </lightning:layoutitem>
+    </lightning:layout>
+</aura:component>

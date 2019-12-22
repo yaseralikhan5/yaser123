@@ -1,0 +1,30 @@
+<apex:page controller="jsonex1" >
+    <apex:form >
+      <apex:pageblock >
+          <apex:inputText value="{!ipaddr}"/>
+          <apex:commandButton value="Submit" action="{!convert}"/>
+        </apex:pageblock>
+        <apex:pageblock >
+        <apex:pageblocksection >
+            <apex:pageblocksectionitem >
+                status:<apex:inputtext value="{!status}"/>
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+                statusCode:<apex:inputtext value="{!statuscode}"/>
+            </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            <apex:pageblocksection >
+            <apex:pageblocksectionitem >
+                Result:<apex:inputTextarea value="{!result}"/>
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+               <apex:pageBlockTable value="{!res}" var="a">
+                <apex:column value="{!a}"/>
+                   <apex:column value="{!res[a]}"/>
+                </apex:pageBlockTable>
+            </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+  
+</apex:page>

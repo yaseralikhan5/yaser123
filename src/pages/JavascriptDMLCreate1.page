@@ -1,0 +1,32 @@
+<apex:page id="page">
+    <apex:form id="fm">
+        <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+        </script>
+        <script>
+        function call(){
+            sforce.connection.sessionId='{!GETSESSIONID()}';
+            var name=document.getElementById('page:fm:pb:ip1').value;
+           
+            var industry=document.getElementById('page:fm:pb:ip2').value;
+            
+            var rating=document.getElementById('page:fm:pb:ip3').value;
+            var accounts=[];
+            var acc=new sforce.SObject("Account");
+            acc.Name=name;
+            acc.Industry=industry;
+            acc.Rating=rating;
+            accounts.push(acc);
+            var result=sforce.connection.create(accounts);
+            
+                document.getElementById('page:fm:pb:ip4').innerHTML='sucessful';                                
+            }
+        </script>
+    <apex:pageblock id="pb">
+        <apex:commandButton value="submit" oncomplete="call()"/>
+        name:<apex:inputtext id="ip1"/>
+       Industry: <apex:inputtext id="ip2"/>
+       Rating: <apex:inputtext id="ip3"/>
+        Result: <apex:inputtext id="ip4"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

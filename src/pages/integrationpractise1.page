@@ -1,0 +1,20 @@
+<apex:page controller="integrationpractise1" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:commandButton value="Submit" action="{!invoke}" />
+        clientId:<apex:inputtext value="{!clientId}"/>
+        clientSecret:<apex:inputtext value="{!clientSecret}"/>
+        
+        <br/>
+        <br/>
+           
+        username:<apex:inputtext value="{!username}"/>
+         password:<apex:inputtext value="{!password}"/>
+       
+        Result:<apex:inputTextarea value="{!result}" cols="50" rows="50"/>
+        <apex:pageBlockTable value="{!resmap}" var="a">
+        <apex:column value="{!a}"/>
+        <apex:column value="{!resmap[a]}"/></apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

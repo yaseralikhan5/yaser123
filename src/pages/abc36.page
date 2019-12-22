@@ -1,0 +1,21 @@
+<apex:page controller="PaginationSetControllerOpportunity">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockTable value="{!opt}" var="a">
+        <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.stagename}"/>
+            <apex:column value="{!a.closedate}"/>
+           
+        </apex:pageBlockTable>
+        {!controller.pagenumber}&nbsp; to &nbsp;{!totalpages}
+        <apex:commandLink value="First" action="{!controller.first}" rendered="{!controller.hasprevious}"/>
+        &nbsp;
+         <apex:commandLink value="previous" action="{!controller.previous}" rendered="{!controller.hasprevious}"/>
+        &nbsp;
+         <apex:commandLink value="next" action="{!controller.next}" rendered="{!controller.hasnext}"/>
+        &nbsp;
+         <apex:commandLink value="last" action="{!controller.last}" rendered="{!controller.hasprevious}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

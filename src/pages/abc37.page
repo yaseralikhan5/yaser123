@@ -1,0 +1,10 @@
+<apex:page controller="SchemaObjectfieldCondition">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockTable value="{!objtype}" var="a">
+            <apex:column value="{!a}"/>
+            <apex:column value="{!objtype[a]}"/>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

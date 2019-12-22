@@ -1,0 +1,51 @@
+<apex:page controller="miniproject3" id="page">
+    <apex:form id="fm">
+    <apex:sectionHeader title="MINI Project3"/>
+        <script>
+        function call(pid){
+            var rows=pid.split(':');
+            alert(rows);
+            alert(rows[3]);
+            alert(rows[4]);
+            var unitprice=document.getElementById('page:fm:pb2:pbt:'+rows[4]+':ip1').value;
+            var qty=document.getElementById('page:fm:pb2:pbt:'+rows[4]+':ip2').value;
+            var dsc=document.getElementById('page:fm:pb2:pbt:'+rows[4]+':ip3').value;
+            var tax=document.getElementById('page:fm:pb2:pbt:'+rows[4]+':ip4').value;
+            var subtotal=parseInt(unitprice*qty);
+            var total1=(subtotal)-parseInt(dsc)*0.01*(subtotal);
+            var total2=total1+parseInt(tax)*0.01*(total1);
+            document.getElementById('page:fm:pb2:pbt:'+rows[4]+':ip5').value=total2;
+            }
+        </script>
+        <apex:pageblock >
+            <apex:pageblocksection title="account details" >
+                <apex:inputField value="{!acc.name}"><apex:actionSupport event="onchange" action="{!populate1}"/></apex:inputField>
+                <apex:inputField value="{!acc.industry}"/>
+                <apex:inputField value="{!acc.billingcity}"/>
+                <apex:inputField value="{!acc.description}"/>
+            
+            </apex:pageblocksection>
+        </apex:pageblock>
+            <apex:pageblock id="pb2">
+            <apex:pageBlockSection title="contact details">
+            
+                <apex:inputField value="{!cc.lastname}"/>
+                <apex:inputField value="{!cc.firstname}"/>
+                <apex:inputField value="{!cc.mobilephone}"/>
+                <apex:inputField value="{!cc.otherphone}"/>
+                <apex:inputField value="{!cc.email}"/>
+                <apex:inputField value="{!cc.department}"/>
+            </apex:pageBlockSection>
+           <apex:pageblocktable value="{!wrap}" var="a" id="pbt">
+               <apex:column headerValue="Product name" ><apex:inputtext value="{!a.name}"/></apex:column>
+               <apex:column headerValue="Unit price" ><apex:inputtext id="ip1" value="{!a.unitprice}" onchange="call(this.id)"/></apex:column>
+               <apex:column headerValue="Quantity" ><apex:inputtext id="ip2" value="{!a.quantity}" onchange="call(this.id)"/></apex:column>
+               <apex:column headerValue="Discount" ><apex:inputtext id="ip3" value="{!a.discount}" onchange="call(this.id)"/></apex:column>
+               <apex:column headerValue="Tax" ><apex:inputtext id="ip4" value="{!a.tax}" onchange="call(this.id)"/></apex:column>
+               <apex:column headerValue="Total" ><apex:inputtext id="ip5" value="{!a.total}" onchange="call(this.id)"/></apex:column>
+            
+            </apex:pageblocktable>
+                <apex:commandButton value="save" action="{!Submit}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

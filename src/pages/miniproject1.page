@@ -1,0 +1,30 @@
+<apex:page controller="miniproject1" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockSection >
+        <apex:inputText value="{!search1}"/><apex:commandButton value="search" action="{!select1}"/></apex:pageBlockSection>
+        <apex:pageblocksection ><apex:selectList value="{!selected1}" size="1">
+            <apex:selectOptions value="{!op}"></apex:selectOptions><apex:actionSupport event="onchange" action="{!populate1}"/></apex:selectList></apex:pageblocksection>
+         <apex:pageBlockTable value="{!wrap}" var="b">
+             <apex:column ><apex:facet name="header"> <apex:inputCheckbox /></apex:facet>
+                 <apex:inputCheckbox value="{!b.flag}"></apex:inputCheckbox></apex:column>
+        <apex:column value="{!b.a.name}"/>
+        <apex:column value="{!b.a.industry}"/>
+        <apex:column value="{!b.a.rating}"/></apex:pageBlockTable>
+        </apex:pageblock>
+        <apex:commandLink value="First" action="{!hasfirst}" rendered="{!controller.hasprevious}"/>
+        &nbsp;
+         <apex:commandLink value="next" action="{!hasnext}" rendered="{!controller.hasnext}"/>
+        &nbsp;
+         <apex:commandLink value="previous" action="{!hasprevious}" rendered="{!controller.hasprevious}"/>
+        &nbsp;
+         <apex:commandLink value="last" action="{!haslast}" rendered="{!controller.hasnext}"/>
+      <!--  <apex:pageblock >
+        <apex:pageBlockTable value="{!wrap1}" var="c">
+            <apex:column ><apex:inputCheckbox value="{!c.flag}"/></apex:column>
+            <apex:column value="{!c.a.name}"/>
+            <apex:column value="{!c.a.industry}"/>
+            <apex:column value="{!c.a.rating}"/></apex:pageBlockTable>
+        </apex:pageblock>-->
+    </apex:form>
+</apex:page>

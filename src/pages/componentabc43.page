@@ -1,0 +1,5 @@
+<apex:page >
+    <c:componentabc43 emp="yaser" background="yellow" color="Red"/>
+    <c:componentabc43 emp="Naveed" background="blue" color="pink"/>
+    <c:componentabc43 emp="khan" background="grey" color="black"/>
+</apex:page>

@@ -1,0 +1,8 @@
+<aura:component >
+    <lightning:input label="Enter name"/>
+     <lightning:input label="Enter industry"/>
+     <lightning:input label="Enter Rating"/>
+     <lightning:input label="Enter Description"/>
+     <lightning:input label="Enter Phone"/>
+    If this control doesnt display atleast i will show up
+</aura:component>

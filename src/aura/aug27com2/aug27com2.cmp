@@ -1,0 +1,6 @@
+<aura:component>
+    <aura:registerEvent name="third" type="c:aug27com1Event"/>
+    <lightning:input label="Enter" aura:id="search1"/>
+    <lightning:button label="submit" onclick="{!c.callme}"/>
+    
+</aura:component>

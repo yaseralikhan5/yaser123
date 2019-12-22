@@ -1,0 +1,15 @@
+<apex:page controller="LabelExample">
+<apex:form >
+    <apex:pageBlock title="button label1">
+    <apex:commandButton value="Mybutton"/>
+    </apex:pageBlock>
+    <apex:pageblock title="button with action:this will call show method">
+    <apex:commandButton value="mybutton1" action="{!show}"/>{!result}</apex:pageblock>
+    <apex:pageblock title="button with action:this is redirect to other vf page">
+    <apex:commandButton value="button2" action="{!mypage}"/></apex:pageblock>
+    <apex:pageblock title="css setting" >
+    <apex:commandButton value="button3" Style="background:#2EFEF7;"/></apex:pageblock>
+    
+    </apex:form>
+
+</apex:page>

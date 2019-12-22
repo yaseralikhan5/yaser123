@@ -1,0 +1,17 @@
+<apex:page controller="DMLONAccountContact">
+    <apex:form >
+<apex:pageblock >
+    <apex:datatable value="{!acc}" var="a" border="5" rules="cols" cellspacing="8" cellpadding="8">
+        <apex:column headerValue="name" value="{!a.name}"/>
+        <apex:column headerValue="industry" value="{!a.industry}"/>
+        <apex:column headerValue="phone" value="{!a.phone}"/>
+        <apex:column >
+        <apex:dataTable value="{!a.contacts}" var="b" border="5" rules="cols" cellspacing="8" cellpadding="8" rendered="{! !ISNULL(acc)}">
+                <apex:column headervalue="Firstname" value="{!b.firstname}"/>
+        <apex:column headerValue="Lastname" value="{!b.lastname}"/></apex:dataTable>
+        </apex:column>
+        </apex:datatable>
+    
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

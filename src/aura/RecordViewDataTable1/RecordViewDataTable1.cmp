@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:registerEvent name="event1" type="c:RecordEvent1"/>
+	<lightning:card title="Search" iconName="standard:account">
+        <lightning:input label="Enter Searchitem" aura:id="search"/>
+        <aura:set attribute="actions">
+            <lightning:button label="Search" onclick="{!c.search}"/>
+        </aura:set>
+    
+    </lightning:card>
+</aura:component>

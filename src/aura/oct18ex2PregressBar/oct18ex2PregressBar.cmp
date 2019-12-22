@@ -1,0 +1,53 @@
+<aura:component >
+    <aura:attribute name="progress" type="string" default="two"/>
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+  <div class="slds-modal__container">
+    <header class="slds-modal__header">
+      
+      <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Progress Bar</h2>
+      <p class="slds-m-top_x-small">
+          <lightning:progressIndicator currentstep="{!v.progress}" type="base">
+              <lightning:progressstep label="question1" value="one" onclick="{!c.showstep1}"/>
+             
+              <lightning:progressstep label="question2" value="two" onclick="{!c.showstep2}"/>
+               
+              <lightning:progressstep label="question3" value="three" onclick="{!c.showstep3}"/>
+                  
+          </lightning:progressIndicator>
+      
+        </p>
+    </header>
+    <div>
+      <aura:if isTrue="{!v.progress == 'one'}">
+           <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+       Question 1: Instructor says, "he is working hard to give you the best stuff", What you think?
+                    <br/>  <br/>
+                    <ui:inputText /> 
+      </div>
+        </aura:if>
+        
+         <aura:if isTrue="{!v.progress=='two'}">
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+       Question 2: Instructor says, "he is working hard to give you the best stuff", What you think?
+                    <br/>  <br/>
+                    <ui:inputText /> 
+      </div>
+        </aura:if>
+         <aura:if isTrue="{!v.progress=='three'}">
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+       Question3 : Instructor says, "he is working hard to give you the best stuff", What you think?
+                    <br/>  <br/>
+                    <ui:inputText /> 
+      </div>
+        </aura:if>
+      </div>
+      
+      
+    <footer class="slds-modal__footer slds-modal__footer_direction">
+      <button class="slds-button slds-button_neutral" disabled="{!v.progress=='one'}" onclick="{!show1}">Previous</button>
+      <button class="slds-button slds-button_brand">next</button>
+    </footer>
+  </div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

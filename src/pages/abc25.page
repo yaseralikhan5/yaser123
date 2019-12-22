@@ -1,0 +1,17 @@
+<apex:page controller="PageRedirectWithData">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+       <apex:commandButton value="Insert" action="{!Insert1}"/>
+        <apex:commandButton value="Home" action="{!Home}"/></apex:pageBlockButtons>
+        <apex:pageBlockSection >
+             <apex:outputfield value="{!accounts.name}"/>
+            <apex:outputfield value="{!accounts.phone}"/>
+            <apex:outputField value="{!accounts.fax}"/>
+              <apex:outputField value="{!accounts.type}"/>
+            <apex:outputField value="{!accounts.industry}"/>
+            <apex:outputField value="{!accounts.ownership}"/>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

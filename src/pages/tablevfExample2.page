@@ -1,0 +1,18 @@
+<apex:page standardController="Customer_BANK__c" recordSetVar="items">
+    <apex:form >
+    <apex:pageblock title="customer records">
+    <apex:pageblocktable value="{!items}" var="a">
+        <apex:column >
+        <apex:facet name="header">
+            <apex:inputCheckbox />
+            </apex:facet>
+            <apex:inputCheckbox />
+        </apex:column>
+        <apex:column value="{!a.FirstName__c}"/>
+         <apex:column value="{!a.Active_User__c}"/>
+         <apex:column value="{!a.PanCard__c}"/>
+         <apex:column value="{!a.Phone__c}"/>
+        </apex:pageblocktable>    
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="SelectOptionWithMap">
+    <apex:form id="fb">
+    <apex:pageblock >
+        <apex:selectList value="{!selected}" size="1" >
+            <apex:selectOptions value="{!cities}"/>
+        <apex:actionSupport event="onchange" action="{!fetch}" reRender="fb"/>
+        </apex:selectList>
+        <apex:selectlist size="1">
+            <apex:selectoptions value="{!places}"/>
+        
+        </apex:selectlist>
+        
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

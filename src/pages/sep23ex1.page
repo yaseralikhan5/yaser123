@@ -1,0 +1,26 @@
+<apex:page Controller="sep23ex2" >
+    <apex:form >
+    <apex:dataTable value="{!acc}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Industry}"/>
+        <apex:column value="{!a.Rating}"/>
+        </apex:dataTable>
+        <apex:commandLink value="First" action="{!controller.first}" rendered="{!controller.hasprevious}"/>
+        &nbsp;
+        <apex:commandlink value="next" action="{!controller.next}" rendered="{!controller.hasnext}"/>
+        &nbsp;
+        <apex:commandlink value="previous" action="{!controller.previous}" rendered="{!controller.hasprevious}"/>
+        <apex:pageblock >
+        <apex:dataTable value="{!acc1}" var="b" border="5" cellpadding="5" cellspacing="5">
+            <apex:column value="{!b.name}"/>
+            <apex:column value="{!b.Industry}"/>
+            <apex:column value="{!b.Rating}"/>
+            </apex:dataTable>
+            <apex:dataTable value="{!con1}" var="c" border="5" cellpadding="5" cellspacing="5">
+            <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>
+            </apex:dataTable>
+            <apex:inputtextarea value="{!xmlstring}" cols="100" rows="100"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

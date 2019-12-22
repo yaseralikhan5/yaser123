@@ -1,0 +1,23 @@
+<apex:page controller="sfApex2" >
+    <apex:form >
+    <apex:pageBlock >
+        username:<apex:inputText value="{!username}"/>
+       password: <apex:inputtext value="{!pwd}"/>
+        clientid:<apex:inputtext value="{!clientid}"/>
+        client secret:<apex:inputtext value="{!clientsecret}"/>
+        
+        <apex:commandButton value="Get token" action="{!invoke}"/>
+        <br/>
+        <br/>
+        access token:<apex:inputTextarea value="{!accesstoken}" cols="50" rows="50"/>
+        
+        <br/>
+        <br/>
+        Token: <apex:inputtext value="{!token}"/>
+        <br/>
+        <br/>
+        Content:<apex:inputTextarea value="{!content}" cols="50" rows="50"/>
+        <apex:commandButton value="Get content" action="{!invoke1}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

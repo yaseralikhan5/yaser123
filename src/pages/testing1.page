@@ -1,0 +1,14 @@
+<apex:page controller="testing1">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:commandButton value="Update" action="{!invoke}"/>
+        <apex:pageBlockTable value="{!acc1}" var="a">
+      
+            <apex:column value="{!a.name}"/>
+                   <apex:column value="{!a.rating}"/>
+           
+            
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

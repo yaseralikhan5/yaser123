@@ -1,0 +1,56 @@
+<apex:page controller="classpractise12">
+    <apex:form >
+    <apex:pageblock title="Accounts and contact">
+        <apex:pageBlockButtons >
+        <apex:commandButton value="save" action="{!create}" />
+        </apex:pageBlockButtons>
+       <apex:pageBlockSection title="Account">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Name:" />
+            <apex:inputText value="{!name}"/>
+           
+           </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Rating:" />
+            <apex:inputText value="{!rating}"/>
+           
+           </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="industry:" />
+            <apex:inputText value="{!industry}"/>
+           
+           </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="phone:" />
+            <apex:inputText value="{!phone}"/>
+           
+           </apex:pageBlockSectionItem>
+        
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="contact">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Email:" />
+            <apex:inputText value="{!Email}"/>
+           
+           </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Department:" />
+            <apex:inputText value="{!Department}"/>
+           
+           </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Assistantname:" />
+            <apex:inputText value="{!Assistantname}"/>
+           
+           </apex:pageBlockSectionItem>
+       <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Lastname :" />
+            <apex:inputText value="{!Lastname}"/>
+           
+           </apex:pageBlockSectionItem>
+        
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

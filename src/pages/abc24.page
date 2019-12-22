@@ -1,0 +1,15 @@
+<apex:page controller="PageRedirectWithData">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+        <apex:commandButton value="previous" action="{!previous}"/>
+          <apex:commandButton value="next" action="{!finish}"/></apex:pageBlockButtons>
+        <apex:pageBlockSection >
+             
+              <apex:inputField value="{!accounts.type}"/>
+            <apex:inputfield value="{!accounts.industry}"/>
+            <apex:inputfield value="{!accounts.ownership}"/>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

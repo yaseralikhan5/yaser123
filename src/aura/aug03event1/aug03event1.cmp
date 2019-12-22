@@ -1,0 +1,8 @@
+<aura:component controller="aug03event1" >
+      <aura:attribute name="accountid" type="id"/>
+ 
+    <lightning:input label="enter lastname" aura:id="lname"/>
+    <lightning:input label="enter firstname" aura:id="fname"/>
+    <lightning:button label="Save" onclick="{!c.callme1}"/>
+    
+</aura:component>

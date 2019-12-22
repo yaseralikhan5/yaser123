@@ -1,0 +1,146 @@
+<apex:page controller="OpportunityTreeViewController"  id="pg">
+    <style>
+        .sign-class{
+            font-size: 12px;
+            font-weight: 700;
+            padding: 0px 5px;
+            margin-right: 10px;
+            border: 1px solid black;
+            background: black;
+            color: whitesmoke;
+            margin-bottom:10px;
+            cursor:pointer;
+        }
+        .pbBody table.list tr.dataRow td {
+            font-family: verdana;
+            font-weight: normal;
+        }
+    </style>
+     
+    <apex:form id="frm">
+        <apex:actionFunction name="fun" action="{!populate}" reRender="frm"/>
+ <apex:pageBlock id="pb1" title="Opportunities by Close Date -">
+            <apex:variable value="{!0}" var="dateIndex"/>
+            <apex:pageBlockTable value="{!mapOpportunities}" var="dateKey" id="dateTable" >
+                <apex:column style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                    <apex:facet name="header">
+                        <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                            Close Date
+                        </span>    
+                    </apex:facet>
+                    <!--class="sign-class"-->
+                    <span id="date-sign-{!dateIndex}"  onclick="toggleDateTable('{!dateIndex}');">+</span>
+                    <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                        Close Date - {!dateKey}
+                    </span>
+                    <apex:variable value="{!0}" var="stageIndex"/>
+                    <apex:pageBlockTable value="{!mapOpportunities[dateKey]}" var="stageKey" id="stageTable" style="display:none;margin-top:10px;margin-left:20px;width:95%;">
+                        <apex:column style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                            <apex:facet name="header">
+                                <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                                    Distributor
+                                </span>    
+                            </apex:facet>
+                            <!--class="sign-class"-->
+                            <span id="stage-sign-{!dateIndex}-{!stageIndex}"  onclick="toggleStagesTable('{!dateIndex}','{!stageIndex}');">+</span>
+                            <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                                {!stageKey}
+                            </span>
+                            <apex:variable value="{!0}" var="recordIndex"/>
+                            <apex:pageBlockTable value="{!mapOpportunities[dateKey][stageKey]}" var="oppRecord" id="opportunityTable" style="margin-top:10px;margin-left:20px;width:95%;display:none;">
+                         
+                                <apex:column ><apex:inputCheckbox value="{!oppRecord.flag}" onchange="connect1()">
+                                    
+                                    </apex:inputCheckbox></apex:column>
+                                <apex:column headerValue="Name" value="{!oppRecord.temp.Name}"/>
+                               
+                            </apex:pageBlockTable>
+                            <apex:variable value="{!stageIndex+1}" var="stageIndex"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:variable value="{!dateIndex+1}" var="dateIndex"/>
+                </apex:column>    
+            </apex:pageBlockTable>    
+        </apex:pageBlock>   
+        <apex:pageblock id="pb2" rendered="{!blockflag}">
+            <apex:pageBlockButtons >
+            <apex:commandButton value="Create" action="{!create1}" />
+                <apex:commandButton value="Update" action="{!update1}"/>
+                <apex:commandButton value="Delete" action="{!delete1}"/>
+            </apex:pageBlockButtons>
+            <apex:pageblocksection id="pbs1">
+                <apex:pageBlockSectionItem id="pbsi1">
+            <apex:outputLabel value="Stage" ></apex:outputLabel>
+                <apex:inputText id="it1" value="{!stagename}" />
+               
+                    </apex:pageBlockSectionItem>
+                  <apex:pageBlockSectionItem id="pbsi2">
+                       <apex:outputLabel value="ExternalId" ></apex:outputLabel>
+                <apex:inputText id="it2" value="{!externalid}" />
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem id="pbsi3">
+                <apex:outputLabel value="Close Date" ></apex:outputLabel>
+                <apex:inputText id="it3" value="{!closedate}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi4">
+                <apex:outputLabel value="count" ></apex:outputLabel>
+                <apex:inputText id="it4" value="{!count}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+     
+    <!-- Script Part -->
+    
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"/>
+    <script>
+        
+         function connect1(){
+        //alert('step1');
+        //document.getElementById('pg:frm:pb2:pbs1:pbsi1:it1').value='';
+        // document.getElementById('pg:frm:pb2:pbs1:pbsi2:it2').value='';
+        // document.getElementById('pg:frm:pb2:pbs1:pbsi3:it3').value='';
+        //alert('step last');
+        fun();
+        }
+    
+        $(document).ready(function(){
+            $(esc('pg:frm:pb1:dateTable:tb')+" > tr").attr("onmouseover","");
+            $("[id$='stageTable:tb'] > tr").attr("onmouseover","");
+            $(esc('pg:frm:pb1:dateTable:tb')+" > tr > td").hover(function(){$(this).css("background-color","ghostwhite");}, function(){$(this).css("background-color","white");});
+            $("[id$='stageTable:tb'] > tr > td").hover(function(){$(this).css("background-color","greenyellow");}, function(){$(this).css("background-color","white");});
+            $("[id$='stageTable'] > thead .headerRow").css("background-color","deepskyblue");
+        });
+         
+        function toggleDateTable(index){
+            var signtext = $("#date-sign-"+index).text();
+            var tableId = 'pg:frm:pb1:dateTable:'+index+':stageTable';
+            if(signtext == '+'){
+                $("#date-sign-"+index).text('-').css("padding", " 0px 7px");
+                $(esc(tableId)).show();
+            }
+            else{
+                $("#date-sign-"+index).text('+').css("padding", " 0px 5px");
+                $(esc(tableId)).hide();
+            }
+        }
+         
+        function toggleStagesTable(rootindex, childindex){
+            var signtext = $("#stage-sign-"+rootindex+"-"+childindex).text(); //address-sign-index-addIndex
+            var tableId = 'pg:frm:pb1:dateTable:'+rootindex+':stageTable:'+childindex+':opportunityTable';
+            if(signtext == '+'){
+                $("#stage-sign-"+rootindex+"-"+childindex).text('-').css("padding", " 0px 7px");
+                $(esc(tableId)).show();
+            }
+            else{
+                $("#stage-sign-"+rootindex+"-"+childindex).text('+').css("padding", " 0px 5px");
+                $(esc(tableId)).hide();
+            }
+        }
+         
+        function esc(myid) {
+            return '#' + myid.replace(/(:|\.)/g,'\\\$1');
+        } 
+         
+    </script>        
+</apex:page>

@@ -1,0 +1,14 @@
+<aura:component >
+<div>
+    <lightning:card title="account" iconname="standard:account">
+        <aura:set attribute="footer">
+            <lightning:button label="save" onclick="{!c.callme}"/>
+            <lightning:button label="cancel" onclick="{!c.cancel}"/>
+        </aura:set>
+        <lightning:input label="name" aura:id="name"/>
+        <lightning:input label="phone" aura:id="phone"/>
+        <lightning:input label="industry" aura:id="industry"/>
+    </lightning:card>
+    
+    </div>	
+</aura:component>

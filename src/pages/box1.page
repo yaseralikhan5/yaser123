@@ -1,0 +1,15 @@
+<apex:page controller="boxApex1" >
+    <apex:form >
+    <apex:pageblock >
+        ClientId:<apex:inputText value="{!clientid}"/>
+        ClientSecret:<apex:inputText value="{!clientsecret}"/>
+        <apex:commandButton Value="GetCode" action="{!invoke}"/>
+        <br/>
+        <br/>
+        code:<apex:inputtext value="{!code}"/>
+        
+        body:<apex:inputTextarea value="{!body}" cols="50" rows="50"/>
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

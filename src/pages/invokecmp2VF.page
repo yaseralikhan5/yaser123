@@ -1,0 +1,28 @@
+<apex:page >
+    <apex:form >
+    <apex:includeLightning />
+        <apex:commandButton value="submit" oncomplete="callme()"/>
+        <div id="one">
+            
+        </div>
+        <script>
+        function callme(){
+            console.log("step1 vf");
+            $Lightning.use("c:Invokecmp2app",function(){
+            $Lightning.createComponent("c:Invokecmp2",
+                                       {},
+                                       "one",
+                                       function(cmp){
+                                           console.log("step2 vf");
+                var ev=cmp.getEvent("only");
+                                           console.log("step3 vf");
+                ev.setParams({"name":"yaser","age":30});
+                                           console.log("event.fired");
+                ev.fire();
+                });
+            });
+            
+            }
+        </script>
+    </apex:form>
+</apex:page>

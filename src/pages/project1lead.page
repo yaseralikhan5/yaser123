@@ -1,0 +1,24 @@
+<apex:page standardController="Lead" extensions="project1lead">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!submit}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Lead Details">
+        
+            <apex:inputField value="{!lead.firstname}"/>
+            <apex:inputField value="{!lead.lastname}"/>
+            <apex:inputField value="{!lead.leadsource}"/>
+            <apex:inputField value="{!lead.status}"/>
+            <apex:inputField value="{!lead.company}"/>
+            <apex:inputField value="{!lead.NineProjects__Subject__c}"/>
+            <apex:inputField value="{!lead.RecordType__c}"/>
+            <apex:inputField value="{!lead.Lead_Type__c}"/>
+           
+        
+        
+        </apex:pageBlockSection>
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

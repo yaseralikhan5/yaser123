@@ -1,0 +1,13 @@
+<apex:page standardController="Customer_BANK__c" >
+    <apex:sectionHeader title="Customer Records"/>
+    <apex:pageblock title="Customer">
+    <apex:pageblocktable value="{!Customer_BANK__c}" var="a">
+        <apex:column value="{!a.FirstName__c}"/>
+        <apex:column value="{!a.PanCard__c}"/>
+        <apex:column value="{!a.Active_User__c}"/>
+        
+        </apex:pageblocktable>
+    
+    
+    </apex:pageblock>
+</apex:page>

@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="industry" type="string"/>
+    <aura:attribute name="rating" type="string"/>
+    <aura:registerEvent name="eve" type="c:eventcmp3"/>
+    <aura:set attribute="title">
+        Account<br/>
+        New Account
+    
+    </aura:set>
+    <lightning:card title="Details" iconName="standard:account">
+        <lightning:input label="Name" value="{!v.name}"/>
+        <lightning:input label="Industry" value="{!v.industry}"/>
+        <lightning:input label="Rating" value="{!v.rating}"/>
+        <aura:set attribute="footer">
+            <lightning:button label="Save" onclick="{!c.save1}"/>
+            <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+        </aura:set>
+    </lightning:card>
+</aura:component>

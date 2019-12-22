@@ -1,0 +1,19 @@
+<apex:page title="Practise3" standardController="Loan_BANK__c" recordSetVar="list">
+    <apex:sectionHeader title="pageblocktable" subtitle="practise3"/>
+    <apex:form >
+    <apex:pageblock title="Loan details">
+        <apex:pageBlockSection >
+        <apex:pageBlockTable value="{!list}" var="a">
+        
+            <apex:column value="{!a.Loan_Type__c}"/>
+            <apex:column value="{!a.Security__c}"/>
+            <apex:column value="{!a.id}"/>
+            
+        
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

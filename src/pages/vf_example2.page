@@ -1,0 +1,37 @@
+<apex:page standardController="Customer_BANK__c">
+    <apex:form >
+    
+    <apex:pageblock >
+        
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            <apex:commandButton value="delete" action="{!delete}"/>
+        </apex:pageBlockButtons>
+        <apex:pageblock title="personal details" mode="main detail">
+            <apex:pageBlockSection >
+            <apex:inputfield value="{!Customer_BANK__c.FirstName__c}"/>
+            <apex:inputfield value="{!Customer_BANK__c.LastName__c}"/>
+                <apex:inputfield value="{!Customer_BANK__c.Phone__c}"/>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+        <apex:pageblock title="Address">
+            <apex:pageblocksection >
+            <apex:inputfield value="{!Customer_BANK__c.Address__c}"/>
+               <apex:inputfield value="{!Customer_BANK__c.States__c}"/>
+            <apex:inputfield value="{!Customer_BANK__c.City__c}"/>
+            <apex:inputfield value="{!Customer_BANK__c.Email__c}"/>
+            
+        </apex:pageblocksection>
+        </apex:pageblock>
+        <apex:pageblock title="rollup summary">
+            <apex:pageblocksection >
+                <apex:inputfield value="{!Customer_BANK__c.Total_no_of_Loans__c}"/>
+        </apex:pageblocksection>
+
+        </apex:pageblock>
+        
+        </apex:pageblock>
+    </apex:form>
+    
+</apex:page>

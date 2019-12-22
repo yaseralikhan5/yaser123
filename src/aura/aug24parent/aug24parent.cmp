@@ -1,0 +1,11 @@
+<aura:component >
+<lightning:layout>
+    <lightning:layoutitem>
+        <c:aug241/>
+    </lightning:layoutitem>
+    <lightning:layoutitem>
+        <c:aug242/>
+    </lightning:layoutitem>
+    </lightning:layout>
+    
+</aura:component>

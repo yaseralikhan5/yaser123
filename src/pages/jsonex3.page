@@ -1,0 +1,14 @@
+<apex:page controller="jsonex3">
+    <apex:form >
+    <apex:pageblock >
+        Access Key: <apex:inputTextarea value="{!accesskey}"/>
+        Source: <apex:inputtext value="{!search}"/>
+      
+        <apex:commandButton value="submit" action="{!invoke}"/>
+        Result:<apex:inputTextarea value="{!result}"/>
+        <apex:pageBlockTable value="{!linkstring}" var="a">
+            <apex:column headerValue="Searched Videos" value="{!a}"></apex:column>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

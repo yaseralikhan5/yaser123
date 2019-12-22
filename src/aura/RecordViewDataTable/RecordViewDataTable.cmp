@@ -1,0 +1,14 @@
+<aura:component controller="RecordViewDataTable" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="acc" type="Account"/>
+    <aura:attribute name="fields" type="list"/>
+    <aura:attribute name="Flag1" type="boolean" default="false"/>
+    <aura:handler event="c:RecordEvent1" action="{!c.show}"/>
+   
+    <aura:if isTrue="{!v.Flag1}">
+    <lightning:dataTable data="{!v.acc}" columns="{!v.fields}" keyField="Id" 
+                         onrowselection="{!c.invoke}"
+                         onrowaction="{!c.populate1}"/>
+    </aura:if>
+         <aura:RegisterEvent name="event2" type="c:RecordEvent2"/>
+</aura:component>

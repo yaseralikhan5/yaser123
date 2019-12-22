@@ -1,0 +1,9 @@
+<apex:page controller="nov29ex1">
+    <apex:messages />
+    <apex:form >
+    <apex:pageblock >
+        Enter your email: <apex:inputText value="{!email1}"/>
+        <apex:commandButton value="Submit" action="{!invoke}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

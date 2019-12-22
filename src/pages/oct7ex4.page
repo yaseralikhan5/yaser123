@@ -1,0 +1,9 @@
+<apex:page controller="oct7ex1">
+    <apex:form >
+    <apex:pageblock >
+        clientid:<apex:inputtext value="{!clientid}"/>
+        clientsecret:<apex:inputtext value="{!clientsecret}"/>
+<apex:commandButton value="submit" action="codesubmit"/>
+    </apex:pageblock>
+        </apex:form> 
+</apex:page>

@@ -1,0 +1,12 @@
+<aura:component controller="oct30AuraEx1">
+    <aura:handler event="c:oct30FieldEvent" action="{!c.show2}"/>
+    <aura:attribute name="Fields" type="string[]"/>
+    <aura:attribute name="Search" type="string"/>
+    <lightning:card title="Field Details">
+        <lightning:select label="{!v.search}" >
+            <aura:iteration items="{!v.Fields}" var="a">
+            <option text="{!a.label}" value="{!a.value}"/>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:card>
+</aura:component>

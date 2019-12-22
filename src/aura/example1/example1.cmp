@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <div>
+    name:yaser
+    </div>
+	
+</aura:component>

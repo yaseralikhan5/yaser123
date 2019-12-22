@@ -1,0 +1,30 @@
+<apex:page standardController="opportunity"  contentType="application/vnd.ms-excel#Contacts.xls" cache="true" recordSetVar="list" >
+<apex:form >
+    <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    function populate(){
+   
+        	sforce.connection.sessionId='{!GETSESSIONID()}';
+            var query="select Id,Name from Account where industry='Energy' and createdDate=TODAY";
+            var queryResult =sforce.connection.query(query);
+            var records =queryResult.getArray('records');
+            var accounts =[];
+            for(var i=0;i<records.length;i++){
+                accounts[i]=records[i].Id;
+             }
+            var result =sforce.connection.deleteIds(accounts);
+            console.log(result);
+        }
+    </script>
+  
+    <apex:pageblock >
+    <apex:pageblocktable value="{!list}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.closedate}"/>
+        <apex:column value="{!a.stagename}"/>
+        
+        </apex:pageblocktable>
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

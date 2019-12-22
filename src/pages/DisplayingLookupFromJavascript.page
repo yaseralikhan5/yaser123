@@ -1,0 +1,24 @@
+<apex:page controller="DisplayingLookupFromJavascript" >
+    <apex:form >
+        <script>
+        function call(){
+            // var openwindow=window.open('apex/UserLookupPage','msgwindow',target='_blank');
+           openwindow=window.open('apex/UserLookupPage', 'Popup','height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+            // openwindow.focus();
+            //return false;
+            
+            }
+        function call2(){
+            openwindow.close();
+            }
+        
+        </script>
+    <apex:pageblock >
+        <apex:pageblocksection >
+            users: <apex:inputtext value="{!user1}" onchange="call2()"/>
+            <apex:commandButton value="Search" onclick="call()"/>
+        </apex:pageblocksection>
+        </apex:pageblock>
+                  
+    </apex:form>
+</apex:page>

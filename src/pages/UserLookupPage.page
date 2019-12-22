@@ -1,0 +1,32 @@
+<apex:page Controller="DisplayingLookupFromJavascript"  showHeader="false" sidebar="false" id="page">
+    <apex:form id="fm">
+      <!--  <apex:actionFunction name="fun" action="{!populate}">
+            <apex:param name="selected" assignTo="{!selected}" value=""/>
+            
+        </apex:actionFunction>-->
+        <script>
+        function call(myid){
+           
+            var rows=myid.split(':');
+            
+           
+            var selected=document.getElementById('page:fm:pb:pbt:'+rows[4]+':cml').value;
+            
+            //fun(selected);
+            document.getElementById('page:fm:inp').value=selected;
+            window.close('apex/UserLookupPage');
+            }
+        </script>
+      
+        <apex:inputtext value="{!selected}" id="inp"> <apex:actionSupport event="onchange" action="{!populate}"></apex:actionSupport></apex:inputtext>
+       <apex:pageblock id="pb">
+          <apex:pageblocktable value="{!u}" var="a" id="pbt">
+             
+              <apex:column ><apex:inputText id="cml" value="{!a.name}" onclick="call(this.id)">
+                  <apex:actionSupport event="onclick" action="{!populate}"/></apex:inputText></apex:column>
+           </apex:pageblocktable>
+           
+        </apex:pageblock>
+      
+    </apex:form>
+</apex:page>

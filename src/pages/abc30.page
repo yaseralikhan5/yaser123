@@ -1,0 +1,29 @@
+<apex:page >
+     <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    function show()
+    {
+    	sforce.connection.sessionId='{!GETSESSIONID()}';
+        var one=new sforce.SObject("Account");
+    one.Name='He-man test1';
+    one.Industry='Finance';
+    one.Rating='Hot';
+    var two=new sforce.SObject("Account");
+    two.Name='He-man test2';
+    two.Industry='Retail';
+    two.Rating='Cold';
+    var accounts=[one,two];
+   sforce.connection.create(accounts);
+        var update1=sforce.connection.query('select id,name from account where name='/'He-man/''' limit=1);
+        update1.name='superman update1';
+        //var updates=[update1];
+        sforce.connection.update(update1);
+        }
+    </script>
+    <apex:form >
+        <apex:commandButton value="Submit" oncomplete="show()" />
+    </apex:form>
+    
+   
+</apex:page>

@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId"
+access="global" >
+    <aura:attribute name="con" type="object"/>
+    <aura:attribute name="errormsg" type="string"/>
+    <force:RecordData aura:id="con1" recordId="{!v.recordId}"
+                      fields="FirstName, LastName, AccountId,Phone,Email"
+                      targetFields="{!v.con}"
+                      targetError="{!v.errormsg}"
+                      mode="EDIT"/>
+    <lightning:card title="contact details">
+        <lightning:input label="Firstname" value="{!v.con.FirstName}"/>
+        <lightning:input label="LastName" value="{!v.con.LastName}"/>
+        <lightning:input label="Accountid" value="{!v.con.AccountId}"/>
+        <lightning:input label="Phone" value="{!v.con.Phone}"/>
+        <lightning:input label="Email" value="{!v.con.Email}"/>
+        <aura:set attribute ="footer">
+            <lightning:button label="Update" onclick="{!c.invoke1}"/>
+            <lightning:button label="Delete" onclick="{!c.invoke2}"/>
+        
+        </aura:set>
+    
+    </lightning:card>
+</aura:component>

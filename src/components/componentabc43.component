@@ -1,0 +1,14 @@
+<apex:component >
+    <apex:attribute name="emp" type="string" description="this is a name variable"/>
+    <apex:attribute name="background" type="string" description="this is BACKGROUND"/>
+    <apex:attribute name="color" type="string" description="this is color"/>
+    <apex:pageblock title="{!emp}">
+    <div style="background:{!background};color:{!color}">
+        <h3>
+            name:{!emp};
+        </h3>
+       
+        </div>
+    
+    </apex:pageblock>
+</apex:component>

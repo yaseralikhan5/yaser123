@@ -1,0 +1,11 @@
+<apex:page controller="jsonex2">
+    <apex:form >
+    <apex:pageblock >
+        <apex:inputtext value="{!pin}"/>
+        <apex:commandButton value="GetPlaces" action="{!places}"/>
+        <apex:pageBlockTable value="{!cities}" var="a">
+        <apex:column value="{!a}"/>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

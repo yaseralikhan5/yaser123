@@ -1,0 +1,7 @@
+<apex:page controller="jsontest1">
+    <apex:form >
+    <apex:pageblock >
+        {!jsonstring}
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

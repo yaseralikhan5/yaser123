@@ -1,0 +1,76 @@
+<apex:page id="page" controller="SchemaClassUseCase">
+    <apex:form id="fm">
+        <script>
+        function call1(myid)
+        { alert("step1");
+             var rows=myid.split(':');          
+         document.getElementById('page:fm:pb:pbt:'+rows[4]+':pbit').value="and";
+         //var name="and";
+         //fun(name);
+          }
+        function call2(myid)
+        {
+            var rows=myid.split(':'); 
+                    alert("step2");
+            document.getElementById('page:fm:pb:pbt:'+rows[4]+':pbit').value="or";
+            // var name="or";
+            //  fun(name);
+					}
+            
+        </script>
+       <!-- <apex:actionFunction name="fun" >
+            <apex:param name="name" assignTo="{!w.conditionvalue}" value=""/>
+        </apex:actionFunction>-->
+       
+    <apex:pageblock id="pb" >
+        <apex:pageBlockSection columns="2">
+        <apex:selectList size="1" value="{!selected1}">
+        <apex:selectOptions value="{!seltype}">
+            </apex:selectOptions>
+            <apex:actionSupport event="onchange" action="{!populate1}" reRender="pb"/>
+            
+        </apex:selectList>
+            
+       
+        <apex:selectList size="1" value="{!selected2}">
+        <apex:selectOptions value="{!selobject}"></apex:selectOptions>
+         <apex:actionSupport event="onchange" action="{!populate2}" reRender="pb"/></apex:selectList>
+       
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="3">
+            <apex:pageBlockSectionItem >
+          <apex:selectList size="5" value="{!selected3}" multiselect="true" style="width:100px; Height:200px">
+        <apex:selectOptions value="{!selfield}"></apex:selectOptions>
+         <apex:actionSupport event="onchange" action="{!populate2}" reRender="pb"/></apex:selectList>
+                </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+        <apex:commandButton value="move right" action="{!populate3}"/>
+        <apex:commandButton value="move Left" action="{!populate4}"/>
+                </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+        <apex:selectList size="5" value="{!selected4}" multiselect="true" style="width:100px; Height:200px">
+        <apex:selectOptions value="{!Movefield}" ></apex:selectOptions>
+        </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockTable id="pbt" value="{!wrap}" var="a">
+        <apex:column ><apex:selectList id="pbsl1" size="1" value="{!a.selected5}" >
+            <apex:selectOptions id="pbso1" value="{!a.fields}"></apex:selectOptions></apex:selectList></apex:column>
+         <apex:column ><apex:selectList size="1" value="{!a.selected6}" >
+            <apex:selectOptions value="{!a.operation}"></apex:selectOptions></apex:selectList></apex:column>
+            <apex:column ><apex:inputText id="pbi" value="{!a.value}" /></apex:column>
+            <apex:column ><apex:inputText id="pbit" value="{!a.conditionvalue}"/></apex:column>
+            <apex:column ><apex:commandButton id="And" action="{!populate5}" value="And" onclick="call1(this.id)" /></apex:column>
+            <apex:column ><apex:commandButton id="Or" action="{!populate5}" value="Or" onclick="call2(this.id)"  /></apex:column>
+            <apex:column ><apex:commandButton action="{!populate6}" value="Remove" /></apex:column>
+        </apex:pageBlockTable>
+            
+        <apex:commandButton value="Fetch Records" action="{!populate7}" reRender="pb"/>
+        
+        <apex:pageBlockTable value="{!obj4}" var="c">
+            <apex:repeat value="{!field2}" var="Rec">
+            <apex:column value="{!c[Rec]}"/></apex:repeat>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

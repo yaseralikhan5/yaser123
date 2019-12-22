@@ -1,0 +1,42 @@
+<apex:page sidebar="false" standardcontroller="Account">
+    <apex:sectionheader title="Example1" subtitle="practice">
+    
+   </apex:sectionheader>
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageblockbuttons >
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:CommandButton value="Cancel" action="{!cancel}"/>
+            <apex:commandbutton value="delete" action="{!delete}"/>
+        </apex:pageblockbuttons>
+        <apex:pageblock Mode="edit" >
+        <apex:inlineEditSupport >
+    <apex:pageblocksection title="Details" collapsible="false">
+        <apex:inputfield value="{!Account.name}"/>
+        <apex:inputfield value="{!Account.accountnumber}"/>
+        <apex:inputfield value="{!Account.AnnualRevenue}"/>
+   </apex:pageblocksection>
+            </apex:inlineEditSupport>/>
+            </apex:pageblock>
+       <apex:pageblock mode="main detail">
+        <apex:pageBlockSection title="detail2" collapsible="false">
+        <apex:outputField value="{!account.name}"/>
+            <apex:outputField value="{!account.accountnumber}"/>
+            <apex:outputField value="{!account.AnnualRevenue}"/>
+        
+        </apex:pageBlockSection>
+           </apex:pageblock>
+        <apex:pageblock mode="inline edit">
+        <apex:pageBlockSection >
+            Name={!Account.name}<br/>
+            Number={!Account.accountnumber}<br/>
+            
+            </apex:pageBlockSection>
+        
+        </apex:pageblock>
+        
+        
+    
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

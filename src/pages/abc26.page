@@ -1,0 +1,28 @@
+<apex:page id="page">
+<apex:form id="fm">
+    <apex:pageblock id="pb">
+        <script>
+        function invoke(){
+            var age1=document.getElementById('{!$Component.pbs.pbsi1.age1}').value;
+            var age2=document.getElementById('{!$Component.pbs.pbsi2.age2}').value;
+            var result=parseInt(age1)+parseInt(age2);
+          document.getElementById('{!$Component.pbs.pbsi3.result}').value=result;
+            }
+            </script>
+        <apex:pageBlockButtons ><apex:commandButton value="submit" onclick="invoke()"/>
+        </apex:pageBlockButtons>
+        <apex:pageblocksection id="pbs">
+        <apex:pageblocksectionitem id="pbsi1">
+           Age1:<apex:inputtext id="age1"/>
+            </apex:pageblocksectionitem>
+            <apex:pageBlockSectionItem id="pbsi2">
+                Age2:<apex:inputtext id="age2"/>
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem id="pbsi3">
+                result:<apex:inputtext id="result"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageblocksection>
+    </apex:pageblock>
+    </apex:form>
+
+</apex:page>

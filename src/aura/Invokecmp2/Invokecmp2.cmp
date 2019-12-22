@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="age" type="integer"/>
+    <aura:registerEvent name="only" type="c:eventcmp2"/>
+    <aura:handler name="only" Event="c:eventcmp2" action="{!c.show}"/>
+    <div>
+    {!v.name}
+        <br/>
+        {!v.age}
+    </div>
+</aura:component>

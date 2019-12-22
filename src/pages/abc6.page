@@ -1,0 +1,20 @@
+<apex:page controller="abc6">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!create}"  value="Create"/>
+        </apex:pageBlockButtons>
+    <apex:pageBlockSection >
+      Name: <apex:inputtext value="{!a.name}"/></apex:pageBlockSection>
+        <apex:pageBlockSection >Phone:<apex:inputtext value="{!a.phone}"/></apex:pageBlockSection>
+        <apex:pageBlockSection >Industry: <apex:inputtext value="{!a.industry}"/></apex:pageBlockSection>
+        
+     <apex:datatable value="{!acc}" var="v" border="5" rules="cols" cellspacing="8" cellpadding="8">
+            <apex:column value="{!v.name}"/>
+            
+            </apex:datatable> 
+        </apex:pageblock>
+        
+        
+        </apex:form>
+</apex:page>

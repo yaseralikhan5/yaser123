@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="empname" type="string"/>
+    <aura:attribute name="age" type="integer"/>
+    <aura:method name="mycall" action="{!c.invoke}">
+        <aura:attribute name="name" type="string"/>
+        <aura:attribute name="age" type="integer"/>
+    </aura:method>
+    {!v.empname}<br/>
+    {!v.age}
+</aura:component>

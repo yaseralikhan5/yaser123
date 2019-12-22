@@ -1,0 +1,6 @@
+<aura:component implements="c:Interfaceex1">
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    <lightning:input label="name" value="{!v.name}" aura:id="empname"/>
+    <aura:handler event="c.Interfaceex1Event" action="{!c.populate}"/>
+    <lightning:button label="submit" onclick="{!c.populate1}"/>
+</aura:component>

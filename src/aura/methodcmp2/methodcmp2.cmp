@@ -1,0 +1,4 @@
+<aura:component >
+    <c:methodcmp1 aura:id="one"/>
+    <lightning:button label="Submit" onclick="{!c.show}"/>
+</aura:component>

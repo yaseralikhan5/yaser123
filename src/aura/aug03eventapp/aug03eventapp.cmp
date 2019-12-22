@@ -1,0 +1,5 @@
+<aura:component >
+    <c:aug03event2/>
+    <c:aug03eventdynamicComp/>
+    
+</aura:component>

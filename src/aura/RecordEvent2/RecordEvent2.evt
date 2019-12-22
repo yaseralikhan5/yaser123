@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template" >
+    <aura:attribute name="accid" type="string"/>
+    <aura:attribute name="flag2" type="boolean"/>
+    <aura:attribute name="mode" type="string"/>
+</aura:event>

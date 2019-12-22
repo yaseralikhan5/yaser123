@@ -1,0 +1,39 @@
+<apex:page controller="KosmosAssignment" >
+    <apex:form >
+    <apex:sectionHeader title="Kosmos Assignment"/>
+    <apex:pageblock >
+        
+    <apex:pageblocksection >
+        
+    <apex:pageblocksectionitem >
+        Currency1:<apex:selectList ><apex:selectOptions value="{!opt2}"></apex:selectOptions>
+        </apex:selectList>
+        </apex:pageblocksectionitem>
+        <apex:pageBlockSectionItem >
+        Enter the amount:<apex:inputtext value="{!value1}"/>
+        </apex:pageBlockSectionItem>
+        </apex:pageblocksection>
+        <apex:pageblocksection >
+         <apex:pageblocksectionitem >
+           Currency2: <apex:selectList size="1" value="{!selected}"><apex:selectOptions value="{!opt1}">
+                </apex:selectOptions>
+        </apex:selectList>
+        </apex:pageblocksectionitem>
+        
+        </apex:pageblocksection>
+        
+        <apex:pageBlockSection >
+       <apex:pageblocksectionitem >
+           <apex:commandButton value="Convert" action="{!invoke}" style="width:150px;Height:50px" />
+        </apex:pageblocksectionitem>
+       
+        <apex:pageBlockSectionitem > Result:<apex:inputtext value="{!currencyValue}"></apex:inputtext>
+        </apex:pageBlockSectionitem>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection >
+        <apex:inputtextarea rows="20" cols="50" value="{!result}"/>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

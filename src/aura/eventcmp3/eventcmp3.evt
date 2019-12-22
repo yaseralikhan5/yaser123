@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event template" >
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="industry" type="string"/>
+    <aura:attribute name="rating" type="string"/>
+</aura:event>

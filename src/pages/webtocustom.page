@@ -1,0 +1,16 @@
+<apex:page controller="webtocustom">
+    <apex:form >
+     <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+        </script>
+        <script>
+        sforce.connection.login('yaseralikhan8@gmail.com','yaser123');
+    </script>
+    <apex:pageblock >
+        <apex:commandButton action="{!submit}" value="submit"/>
+        name:<apex:inputText value="{!name}"/>
+        pancard:<apex:inputtext value="{!pancard}"/>
+       phone: <apex:inputtext value="{!phone}"/>
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="accid" type="Id"/>
+    <aura:attribute name="fields" type="list" default="['Name','Industry,'Rating']"/>
+    <aura:handler name="event2" event="c:oct15ex2event1" action="{!c.show3}"/>
+    <lightning:recordform objectApiName="Account" Fields="{!v.fields}"
+                          recordId="{!v.accid}" mode="edit"
+                          layouttype="full"/>
+</aura:component>

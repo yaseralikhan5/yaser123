@@ -1,0 +1,22 @@
+<aura:component controller="example1" implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="Fields" type="Object"/>
+    <aura:attribute name="Accounts" type="Object"/>
+    <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account'}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}"/>
+    <lightning:layout>
+        <lightning:layoutitem size="4">
+        <lightning:card title="Account">
+            <lightning:input label="enter name" value="{!v.acc.Name}"/>
+            <lightning:input label="enter industry" value="{!v.acc.Industry}"/>
+            <lightning:input label="enter rating" value="{!v.acc.Rating}"/>
+            <lightning:input label="enter phone" value="{!v.acc.Phone}"/>
+            <aura:set attribute="footer">
+                <lightning:button label="submit" onclick="{!c.show}"/>
+            </aura:set>
+            </lightning:card>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="8">
+            <lightning:datatable data="{!Accounts}" columns="{!Fields}" KeyField="id"/>
+        </lightning:layoutitem>
+    </lightning:layout>
+</aura:component>

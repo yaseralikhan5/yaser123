@@ -1,0 +1,30 @@
+<apex:page controller="SavePointWithProductPriceBookEntry">
+    <apex:form id="fm" >
+        <apex:messages />
+    <apex:pageblock >
+        <apex:pageblock >
+        <apex:pageBlockButtons ><apex:commandButton value="Submit" action="{!fetch}" reRender="fm" /></apex:pageBlockButtons>
+        <apex:pageblocksection title="accounts">
+            <apex:pageBlockSectionItem ><apex:outputLabel value="Name"></apex:outputLabel><apex:inputfield value="{!acc.name}"/></apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ><apex:outputLabel value="industry"></apex:outputLabel><apex:inputfield value="{!acc.industry}"/></apex:pageBlockSectionItem>
+
+        </apex:pageblocksection>
+          <apex:pageblocksection title="contacts">
+            <apex:pageBlockSectionItem ><apex:outputLabel value="firstname"></apex:outputLabel><apex:inputfield value="{!con.firstname}"/></apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ><apex:outputLabel value="lastname"></apex:outputLabel><apex:inputfield value="{!con.lastname}"/></apex:pageBlockSectionItem>
+
+        </apex:pageblocksection>
+            <apex:dataTable value="{!proname}" var="d">
+            <apex:column value="{!d}"/>
+            </apex:dataTable>
+            </apex:pageblock>
+        
+       <apex:dataTable value="{!prod}" var="a">
+            <apex:column headerValue="Name"><apex:inputtext value="{!a.name}"/></apex:column>
+          <!-- <apex:column headerValue="quantity"><apex:inputtext value="{!a.quant}"/></apex:column>
+           <apex:column ><apex:commandLink action="{!product}" value="Add"/></apex:column>-->
+        </apex:dataTable>
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

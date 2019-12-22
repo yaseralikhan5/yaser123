@@ -1,0 +1,17 @@
+.THIS .boxone{
+    width:300px;
+    height:600px;
+    padding:5px;
+    margin:20px;
+    border:1px solid black;
+}
+.THIS .boxtwo{
+    width:800px;
+    height:600px;
+    padding:5px;
+    margin:20px;
+    border:1px solid black;
+}
+.THIS .three{
+    padding:10px;
+}

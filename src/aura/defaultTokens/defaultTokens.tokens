@@ -1,0 +1,6 @@
+<aura:tokens>
+    <aura:token name="width" value="200px"/>
+    <aura:token name="height" value="300px"/>
+    <aura:token name="color" value="Red"/>
+    <aura:token name="background" value="yellow"/>
+</aura:tokens>

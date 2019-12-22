@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome" access="global" >
+    <lightning:input aura:id="name" label="name"/>
+    <lightning:input aura:id="age" label="age"/>
+</aura:component>

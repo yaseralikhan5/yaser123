@@ -1,0 +1,28 @@
+<apex:page standardController="Loan_BANK__c" recordSetVar="list" >
+    <apex:form >
+    <style>
+        .one
+        {
+        background:lightgrey;
+        font-size:20px;
+        }
+        </style>
+        <apex:pageblock title="data table">
+    <apex:dataTable value="{!list}" var="a" columnClasses="one" frame="border" width="1000" cellpadding="20" cellspacing="10" border="5">
+        <apex:column headerClass="one" ><apex:facet name="header"> <apex:inputCheckbox /></apex:facet>
+            <apex:inputCheckbox /></apex:column>
+            <apex:column headerValue="Action" headerClass="one">
+                <apex:commandLink value="Edit" action="{!URLFOR($Action.Loan_bank__c.Edit,a.id)}"/>
+                &nbsp; | &nbsp;
+                <apex:commandLink value="delete" action="{!URLFOR($Action.Loan_bank__c.delete,a.id)}"/>
+        </apex:column>
+        <apex:column headerValue="Loan type" headerClass="one">
+            <apex:commandLink value="{!a.Loan_Type__c}" action="/{!a.id}" />
+             <!--   <apex:detail subject="{!a.id}" title="true" relatedList="false" relatedListHover="true"/>
+           -->
+        </apex:column>
+        <apex:column headerValue="Security" headerClass="one" value="{!a.Security__c}"/>
+            </apex:dataTable>
+            </apex:pageblock>
+    </apex:form>
+</apex:page>

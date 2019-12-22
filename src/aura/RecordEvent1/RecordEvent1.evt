@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template" >
+    <aura:attribute name="search" type="string"/>
+    <aura:attribute name="flag1" type="boolean"/>
+</aura:event>

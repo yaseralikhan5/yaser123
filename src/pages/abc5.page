@@ -1,0 +1,16 @@
+<apex:page controller="WrapperClassWithAccountObject">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockTable value="{!rap}" var="b">
+       <apex:column value="{!b.a.name}"/>
+            <apex:column value="{!b.a.industry}"/>
+            <apex:column value="{!b.a.description}"/>
+            <apex:column value="{!b.c.firstname}"/>
+            <apex:column value="{!b.c.lastname}"/>
+      
+            
+        </apex:pageBlockTable>        
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page Controller="SchemaAccountFieldDisplay" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockTable value="{!obj}" var="a">
+        <apex:column value="{!a}" headerValue="key"/>
+            <apex:column value="{!obj[a]}" headerValue="value"/>
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

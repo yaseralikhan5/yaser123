@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="acc" type="object"/>
+    <aura:attribute name="nacc" type="object"/>
+    <aura:attribute name="recid" type="string"/>
+    <aura:attribute name="fields" type="string[]" default="['Name','Industry','Rating','Phone']"/>
+   <lightning:RecordForm aura:id="records" recordId="{!v.recordId}" 
+                      mode="Edit" fields="{!v.fields}" objectApiName="Account"/>
+
+   
+</aura:component>

@@ -1,0 +1,26 @@
+<apex:page id="page" >
+    <apex:form id="fm">
+    <apex:includeLightning />
+        <apex:inputText id="inp" onchange="callme()" />
+        
+        <div id="one">
+            
+        </div>
+        <script>
+        function callme(){
+            var searchdata=document.getElementById('page:fm:inp').value;
+            console.log(searchdata);
+            $Lightning.use("c:VFinvokecmp1app",function(){
+                $Lightning.createComponent("c:VFinvokecmp1",
+                                           {
+                                               "search":searchdata
+                                               },
+                                           "one",
+                                           function(cmp){
+                                               });
+                });
+            
+            }
+        </script>
+    </apex:form>
+</apex:page>

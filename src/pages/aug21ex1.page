@@ -1,0 +1,19 @@
+<apex:page standardController="Candidate_Enquiry__c" sidebar="false">
+    <apex:form >
+    <apex:pageblock >
+       name: <apex:inputtext value="{!Candidate_Enquiry__c.Candidate_Name__c}"/>
+        <br/>
+       community: <apex:inputtext value="{!Candidate_Enquiry__c.Community__c}"/>
+          <br/>
+       course: <apex:inputtext value="{!Candidate_Enquiry__c.Course__c}"/>
+          <br/>
+       qualification: <apex:inputtext value="{!Candidate_Enquiry__c.Educational_Qualification__c}"/>
+          <br/>
+       email: <apex:inputtext value="{!Candidate_Enquiry__c.Email__c}"/>
+          <br/>
+       Gender: <apex:inputtext value="{!Candidate_Enquiry__c.Gender__c}"/>
+          <br/>
+       guardian: <apex:inputtext value="{!Candidate_Enquiry__c.Guardian_Name__c}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

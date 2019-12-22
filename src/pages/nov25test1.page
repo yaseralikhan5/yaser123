@@ -1,0 +1,15 @@
+<apex:page >
+    <html>
+        <head>
+            <style type="test/css">
+            #p1
+                {
+                background-color:red;
+                }
+            </style>
+        </head>
+        <body>
+            <p id="p1"> para1</p>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component controller="invokecmp5apex" >
+    <aura:handler name="eve" event="c.eventcmp3" action="{!c.show}"/>
+    <c:invokecmp4/>
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component controller="oct15ex1" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:attribute name="fields" type="list"/>
+ 
+    <aura:handler event="c:oct15ex1event" action="{!c.show}"/>
+   <aura:registerevent name="event2" type="c:oct15ex2event1"/>
+        <lightning:card title="Account details">
+       
+        <lightning:datatable data="{!v.accounts}" columns="{!v.fields}" keyField="id"
+                             onrowaction="{!c.show2}"
+                             />   
+    </lightning:card>
+            
+</aura:component>

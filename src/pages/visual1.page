@@ -1,0 +1,72 @@
+<apex:page standardController="Contact">
+    <apex:sectionheader title="student" subtitle="{!Contact}">
+        <apex:form >
+            <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+            <apex:commandbutton value="Edit" action="{!edit}"/>
+            <apex:commandbutton value="delete" action="{!delete}"/>
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:commandbutton value="Cancel" action="{!cancel}"/>
+             </apex:pageBlockButtons>
+            <apex:pageblocksection >
+            
+                    
+                    <apex:inputfield value="{!Contact.FirstName}"/>
+                <apex:inputfield value="{!Contact.LastName}"/>
+            
+            </apex:pageblocksection>
+             <apex:pageblocksection >
+            
+                    
+                    <apex:outputfield value="{!Contact.FirstName}"/>
+                <apex:outputfield value="{!Contact.LastName}"/>
+            
+            </apex:pageblocksection>
+       
+                </apex:pageBlock>
+        </apex:form>
+        
+     
+        
+     </apex:sectionheader>
+    </apex:page>
+<!--<apex:sectionHeader title="Contact" subtitle="New Contact"/>
+    <apex:form >
+    <apex:pageblock >
+        
+        <apex:pageblockbuttons >
+            
+            <apex:commandbutton value="Save"></apex:commandbutton>
+            <apex:commandbutton value="Save & New"></apex:commandbutton>
+            <apex:commandButton value="Cancel"/></apex:pageblockbuttons>
+        <apex:pageBlockSection title="Contact information">
+            <apex:inputField style="Opportunity" value="{!Contact.ownerId}"/>
+            <apex:inputfield value="{!Contact.Phone}"/>
+            <apex:inputfield value="{!Contact.salutation}"/>
+            <apex:inputfield value="{!Contact.HomePhone}"/>
+            <apex:inputfield value="{!Contact.FirstName}"/>
+            <apex:inputfield value="{!Contact.MobilePhone}"/>
+            <apex:inputfield value="{!Contact.LastName}"/>  
+             <apex:inputfield value="{!Contact.OtherPhone}"/>
+            <apex:inputfield value="{!Contact.AccountId}"/>
+           
+  
+             <apex:inputfield value="{!Contact.Fax}"/>
+            <apex:inputfield value="{!Contact.Title}"/>
+            <apex:inputfield value="{!Contact.Email}"/>
+            
+              <apex:inputfield value="{!Contact.Department}"/>
+            <apex:inputfield value="{!Contact.AssistantName}"/>
+            <apex:inputfield value="{!Contact.Birthdate}"/>
+            
+               <apex:inputfield value="{!Contact.AssistantPhone}"/>
+            <apex:inputfield value="{!Contact.ReportsToId}"/>
+               
+            <apex:inputfield value="{!Contact.LeadSource}"/>
+        </apex:pageBlockSection>
+       
+            
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>-->

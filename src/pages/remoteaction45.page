@@ -1,0 +1,27 @@
+<apex:page controller="remoteaction45" id="page">
+    <apex:form id="fm">
+        <script>
+        function show(){
+            var fname=document.getElementById('page:fm:pb:tb1').value;
+            var lname=document.getElementById('page:fm:pb:tb2').value;
+            
+          alert("step1");
+            /*remoteaction45.call('yaser','khan',function(result,event){
+                alert("step2");
+                        document.getElementById('page:fm:pb:tb3').value=result;        
+                                
+            },{escape:true});*/
+            remoteaction45.call('Myla','Satish',
+                                      function(result, event){
+                                      document.getElementById('page:fm:pb:tb3').innerHTML=result;
+                                      },{escape: true});
+            }
+        </script>
+        <apex:pageblock id="pb">
+        firstname:<apex:inputtext id="tb1"></apex:inputtext>
+            lastname:<apex:inputtext id="tb2"></apex:inputtext>
+               result:<apex:inputtext id="tb3"></apex:inputtext>
+            <apex:commandButton id="cmd" oncomplete="show()" value="submit"/>
+        </apex:pageblock>
+    </apex:form> 
+</apex:page>

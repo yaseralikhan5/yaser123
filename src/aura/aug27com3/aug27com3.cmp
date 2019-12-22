@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="name" type="string" default="yaser"/>
+    <aura:attribute name="age" type="integer" default="30"/>
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}"/>
+    <aura:method name="fun" action="{!c.actions}">
+        <aura:attribute name="header" type="string" default="{!v.name}"/>
+        <aura:attribute name="footer" type="integer" default="{!v.age}"/>
+        <aura:attribute name="title" type="string" default="method"/>
+    
+    </aura:method>
+</aura:component>

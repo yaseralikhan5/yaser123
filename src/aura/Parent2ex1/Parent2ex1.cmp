@@ -1,0 +1,33 @@
+<aura:component controller="ex1" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="selected" type="string"/>
+    <aura:attribute name="acc" type="object"/>
+    <aura:attribute name="rid" type="string"/>
+    <aura:attribute name="fields" type="string[]" default="['Name','Industry','Rating','Phone']"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>   
+    <lightning:input label="Enter Id" value="{!v.rid}"/>
+    <lightning:input label="selected value" value="{!v.selected}"/>
+    <lightning:select label="Objects" value="{!v.selected}">
+    <option value="Account">Account</option>
+        <option value="Contact">contact</option>
+        <option value="Opportunity">opportunity</option>
+    </lightning:select>
+    <lightning:duallistbox name="objects" label="SObjects"
+                          sourceLabel="object1"
+                          selectedLabel="object2"
+                          options="{!v.fields}"
+                           onchange="{!c.show2}"
+                       />
+    {!v.body}
+    
+    <force:recordData aura:id="record1" recordId="{!v.rid}" fields="{!v.fields}"
+                      targetFields="{!v.acc}" mode="EDIT"/>
+    <lightning:card title="Record data">
+        <lightning:input label="enter name" value="{!v.acc.Name}"/>
+        <lightning:input label="enter Industry" value="{!v.acc.Industry}"/>
+        <lightning:input label="enter Rating" value="{!v.acc.Rating}"/>
+        <lightning:input label="enter phone" value="{!v.acc.Phone}"/>
+        <lightning:button aura:id="save" label="Save" onclick="{!c.showme}"/>
+        <lightning:button aura:id="cancel" label="Cancel" onclick="{!c.showme}"/>
+        <lightning:button aura:id="update" label="Update" onclick="{!c.showme}"/>
+    </lightning:card>
+</aura:component>

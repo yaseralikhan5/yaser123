@@ -1,0 +1,28 @@
+<apex:page controller="abc3">
+    <apex:form id="fm">
+    <apex:sectionHeader title="calculator"/>
+        <apex:pageblock >
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton action="{!add}" value="ADD"/>
+            <apex:commandButton action="{!mul}" value="Multiply"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter a:"/>
+                <apex:inputtext value="{!a}"/>
+                     </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+               
+                    <apex:outputLabel value="Enter b:"/>
+                <apex:inputtext value="{!b}"/>
+                    </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+            
+                    <apex:outputLabel value="Total:"/>
+                <apex:inputtext value="{!total}" />
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

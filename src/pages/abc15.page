@@ -1,0 +1,43 @@
+<apex:page controller="SelectOptionWithDML">
+    <apex:form id="fm">
+    <apex:selectList value="{!selected}" size="1">
+        <apex:selectOptions value="{!sel}"></apex:selectOptions>
+        <apex:actionSupport event="onchange" action="{!fetch}" reRender="fm"/>
+        </apex:selectList>
+        <apex:pageblock >
+            <apex:pageblock >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Insert" action="{!insert1}"/>
+                <apex:commandButton value="delete" action="{!delete1}"/>
+                <apex:commandButton value="update" action="{!update1}"/></apex:pageBlockButtons>
+            <apex:pageBlockSection rendered="{! selected=='account'}">
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="AccountName"></apex:outputLabel>
+                <apex:inputField value="{!a.name}" />
+                </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Industry"></apex:outputLabel>
+                <apex:inputtext value="{!a.industry}" />
+                </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            
+        <apex:pageBlockTable value="{!acc}" var="a">
+            
+            
+    <apex:column value="{!a.industry}"/> 
+        <apex:column value="{!a.phone}"/> 
+            </apex:pageBlockTable>
+        </apex:pageblock>
+        
+       <!--  <apex:pageBlockTable value="{!con}" var="a" rendered="{! selected=='contact'}">
+            
+<apex:column value="{!a.firstname}"/>   
+    <apex:column value="{!a.lastname}"/> 
+        
+            </apex:pageBlockTable>-->
+        
+        </apex:pageblock>
+    </apex:form>
+
+
+</apex:page>

@@ -1,0 +1,10 @@
+<aura:component >
+	<div class="one">
+        <lightning:input label="name"/>
+        <lightning:input label="city"/>
+        <lightning:input label="country"/>
+        <lightning:button label="save"/>
+        <lightning:button label="cancel"/>
+    
+    </div>
+</aura:component>

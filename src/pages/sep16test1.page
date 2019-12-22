@@ -1,0 +1,23 @@
+<apex:page controller="sep16test1" >
+    <apex:form >
+    <apex:dataTable border="3" cellpadding="12" cellspacing="10" value="{!cred}" var="a" >
+        <apex:column value="{!a}"/>
+        <apex:column >
+      <apex:dataTable value="{!cred[a]}" var="b">
+        
+            <apex:column value="{!b.job__c}"/>
+            <apex:column value="{!b.Active__c}"/>
+            <apex:column value="{!b.username__c}"/>
+            <apex:column value="{!b.qualification__c}"/>
+        </apex:dataTable>
+        </apex:column>
+        </apex:dataTable>
+         <apex:dataTable value="{!c}" var="e">
+        
+            <apex:column value="{!e.job__c}"/>
+            <apex:column value="{!e.Active__c}"/>
+            <apex:column value="{!e.username__c}"/>
+            <apex:column value="{!e.qualification__c}"/>
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

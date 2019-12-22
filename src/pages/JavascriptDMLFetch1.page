@@ -1,0 +1,41 @@
+<apex:page id="page">
+    <apex:form id="fm">
+    <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+      
+        </script>
+        <script>
+        function show(){
+            sforce.connection.sessionId='{!GETSESSIONID()}';
+            var select=document.getElementById('page:fm:pb:it').value;
+            
+            var query="select id,name,industry from account where name like '%"+select+"%'";
+            
+            var result=sforce.connection.query(query);
+            var records=result.getArray('records');
+           
+            var label1='';
+            var label2='';
+            for( var i=0;i<records.length;i++){
+                label1=label1+'<br/>'+records[i].Name;
+                label2=label2+'<br/>'+records[i].Industry;
+                }
+            alert(label1);
+             alert(label2);
+            document.getElementById('page:fm:pb:pbs:pbsi1:ol1').innerHTML=label1;
+               document.getElementById('page:fm:pb:pbs:pbsi2:ol2').innerHTML=label2;
+            }
+        </script>
+        <apex:pageblock id="pb">
+            <apex:inputtext id="it"/>
+            <apex:commandButton value="submit" oncomplete="show()"/>
+            <apex:pageblocksection id="pbs">
+                <apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel id="ol1"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                  <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel id="ol2"></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

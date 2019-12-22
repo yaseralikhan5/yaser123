@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="age" type="integer"/>
+    <aura:attribute name="course" type="string"/>
+    <aura:attribute name="flag" type="boolean"/>
+    <lightning:card iconName="standard:Account">
+    <aura:set attribute="title">
+        <h1>Mysecond program</h1>
+        <h1>My very second program</h1>       
+        </aura:set> 
+        <aura:set attribute="actions">
+            <lightning:button label="save" onclick="{!c.save}"/>
+            <lightning:button label="invoke" onclick="{!c.invoke}"/>
+            <lightning:button label="cancel" onclick="{!c.cancel}"/>
+        </aura:set>
+        <div>
+            <lightning:input label="Enter value" aura:id="name"/>
+            <lightning:input label="enter age" aura:id="age"/>
+            <lightning:input label="enter course" aura:id="course"/>
+        
+       </div>
+        <aura:if istrue="{!v.flag}">
+        <div>
+    name={!v.name}
+    age={!v.age}
+    course={!v.course}
+        </div>
+            </aura:if>
+    </lightning:card>
+    
+    
+</aura:component>

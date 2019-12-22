@@ -1,0 +1,23 @@
+<apex:page controller="oct28RestApiEx1" action="{!invoke2}" >
+    <apex:form >
+     <apex:pageblock >
+        ClientId: <apex:inputtext value="{!clientid}"/>
+        clientSecret: <apex:inputText value="{!clientsecret}"/>
+        
+        <br/>
+        <br/>
+        Code:<apex:inputtext value="{!code}"/>
+         <br/>
+         <br/>
+         <apex:commandButton value="GetToken" action="{!invoke3}"/>
+         <br/>
+         Body:<apex:inputtextarea cols="50" rows="50" value="{!body}"/>
+         <br/>
+         AccessToken: <apex:inputText value="{!token}"/>
+         <br/>
+         <apex:commandButton value="Get Data" action="{!invoke4}"/>
+         DATA: <apex:inputTextarea cols="50" rows="50" value="{!data1}"/>
+         
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

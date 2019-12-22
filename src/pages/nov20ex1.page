@@ -1,0 +1,25 @@
+<apex:page controller="nov20ex1" action="{!invoke}" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageblocktable value="{!acc1}" var="a">
+            <apex:repeat value="{!a.acc}" var="b">
+                <apex:column > <table>
+                    <tr>
+                        <th>Name</th>
+                        <th><apex:outputField value="{!b.Name}"/></th>
+                    </tr>
+                    <tr>
+                        <td>Industry</td>
+                        <td><apex:outputField value="{!b.Industry}"/></td>
+                    </tr>
+                     <tr>
+                        <td>Industry</td>
+                        <td><apex:outputField value="{!b.Rating}"/></td>
+                    </tr>
+                </table>
+                    </apex:column>
+            </apex:repeat>
+        </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page id="page" controller="sep22ex2">
+    <apex:form id="fm">
+        <script src="/soap/ajax/46.0/connection.js" type="text/javascript">
+        </script>
+        <script>
+        sforce.connection.sessionid='{!GETSESSIONID()}'; 
+        </script>
+    <apex:pageblock id="pb">
+        <apex:pageBlockTable id="pbt" value="{!acc}" var="a">
+            <apex:column ><apex:inputtext value="{!a.Name}" id="ip1" onchange="callme(this.id)">
+                
+                </apex:inputtext>
+            </apex:column>
+        <apex:column ><apex:inputtext value="{!a.Industry}" id="ip2" onchange="callme(this.id)"/></apex:column>
+            <apex:column ><apex:inputtext value="{!a.Rating}" id="ip3"/></apex:column>
+            <apex:column ><apex:inputText id="ip4"/></apex:column>
+        </apex:pageBlockTable>
+        <c:firstcom empname="yaser" background="grey" color="yellow"/>
+    
+        </apex:pageblock></apex:form>
+</apex:page>

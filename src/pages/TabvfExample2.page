@@ -1,0 +1,31 @@
+<apex:page standardController="Customer_BANK__c">
+    <apex:form >
+    <apex:sectionHeader title="Customer details"/>
+    <apex:pageblock >
+        <apex:pageBlockButtons location="top" >
+        <apex:commandButton value="Save" action="{!save}"/>
+        <apex:commandButton value="Delete" action="{!Delete}"/>
+            <apex:commandbutton value="cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageblock >
+        <apex:pageBlockSection collapsible="false" columns="1" >
+            <apex:inputfield value="{!Customer_BANK__c.FirstName__c}"/>
+            <apex:inputfield value="{!Customer_BANK__c.Active_User__c}"/>
+            <apex:inputfield value="{!Customer_BANK__c.PanCard__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+        
+        <apex:pageBlockTable value="{!Customer_BANK__c.loan_bank__r}" var="a">
+            <apex:column >
+         <apex:facet name="header">
+                <apex:inputCheckbox /></apex:facet>
+            <apex:inputcheckbox ></apex:inputcheckbox></apex:column>
+            <apex:column headerValue="Loan type">
+                <apex:inputfield value="{!a.Loan_Type__c}"/></apex:column>
+            <apex:column headerValue="security">
+                    <apex:inputfield value="{!a.Security__c}"/></apex:column>
+            </apex:pageBlockTable>
+        
+        </apex:pageblock>
+        </apex:form>
+</apex:page>

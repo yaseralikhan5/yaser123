@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="names" type="string"/>
+    <aura:registerevent name="event1" type="c.oct15ex1event"/>
+    
+    <lightning:card title="Account details">
+        <lightning:input label="Search" value="{!v.names}"/>
+        <lightning:button label="Search" onclick="{!c.callme}"/>
+    </lightning:card>
+</aura:component>

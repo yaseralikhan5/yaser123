@@ -1,0 +1,24 @@
+<apex:page controller="rowDeletion" id="page">
+    <apex:form id="fm">
+       <!-- <apex:actionFunction action="{!delist}" name="fun" >
+            <apex:param name="rowid" assignTo="{!myid}" value=""/>
+        </apex:actionFunction>-->
+        <script>
+        function call(accid){
+            var rowid=accid;
+            document.getElementById('page:fm:inp').value=rowid;
+            //alert(rowid);
+            //fun(rowid);
+            }
+        </script>
+        <apex:inputHidden value="{!myid1}" id="inp"/>
+    <apex:dataTable id="dt" value="{!acc}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+        <apex:column ><apex:commandLink value="Delete" action="{!delist}" onclick="call('{!a.id}')" />
+            </apex:column>
+        
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<aura:component controller="aug03ex1">
+    <aura:attribute name="selected" type="list"/>
+    <aura:attribute name="Fields" type="list"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    <lightning:duallistbox name="Duallistbox" label="MUltipicklist" sourcelabel="available Fields"
+                           selectedlabel="selected" options="{!v.Fields}" onchange="{!c.callme}"/> 
+    
+ <aura:iteration items="{!v.selected}" var="a">
+     {!a}<br/>
+    </aura:iteration>
+</aura:component>

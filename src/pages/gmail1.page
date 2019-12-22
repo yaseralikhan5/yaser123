@@ -1,0 +1,9 @@
+<apex:page controller="gmailIntegration" >
+    <apex:form >
+    <apex:pageblock >
+       clientid: <apex:inputText value="{!clientid}"/>
+          clientSecret: <apex:inputText value="{!clientSecret}"/>
+        <apex:commandButton value="getAcessKey" action="{!codeurl}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

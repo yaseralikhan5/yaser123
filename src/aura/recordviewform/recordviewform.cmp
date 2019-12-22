@@ -1,0 +1,18 @@
+<aura:component >
+<lightning:recordViewForm recordId="0010o00002KLvyY" objectApiName="Account">
+    <lightning:layout multipleRows="true">
+    <lightning:layoutitem size="6">
+        <lightning:outputfield fieldName="Name"/>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="6">
+        <lightning:outputfield fieldName="Industry"/>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="6">
+        <lightning:outputfield fieldName="Rating"/>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="6">
+        <lightning:outputfield fieldName="Phone"/>
+        </lightning:layoutitem>
+    </lightning:layout>
+    </lightning:recordViewForm>
+</aura:component>

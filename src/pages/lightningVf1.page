@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:includeLightning />
+    <div id="one"></div>
+    <script>
+    $Lightning.use("c:vfInvokeapp1",function(){
+        $Lightning.createComponent("lightning:card",
+                                   {"title":"Lightningcomponent",
+                                   "iconName":"standard:account"},
+                                   "one",
+                                   function(cmp){
+                                       console.log("testing passed");
+                                       });
+        });
+    </script>
+</apex:page>

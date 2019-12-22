@@ -1,0 +1,11 @@
+<aura:component controller="aug03event1" >
+    <aura:registerEvent name="event1" type="c:aug03event"/>
+    <aura:attribute name="Name" type="string"/>
+    <aura:attribute name="Industry" type="string"/>
+    <aura:attribute name="Rating" type="string"/>
+   
+    <lightning:input label="Enter name" value="{!v.Name}"/>
+    <lightning:input label="enter industry" value="{!v.Industry}"/>
+    <lightning:input label="enter rating" value="{!v.Rating}"/>
+    <lightning:button label="Submit" onclick="{!c.show}"/>
+</aura:component>

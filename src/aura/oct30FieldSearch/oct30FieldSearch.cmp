@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="search1" type="string"/>
+    <aura:registerevent name="event1" type="c.oct30FieldEvent"/>
+ 
+    <lightning:card title="Account details">
+        <lightning:input label="Enter the picklist Field name" value="{!v.search1}"/>
+        <lightning:button label="Search" onclick="{!c.show1}"/>
+    </lightning:card>
+</aura:component>

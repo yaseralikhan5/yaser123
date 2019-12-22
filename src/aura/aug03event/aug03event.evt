@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template" >
+    <aura:attribute name="accid" type="string"/>
+    
+    
+</aura:event>

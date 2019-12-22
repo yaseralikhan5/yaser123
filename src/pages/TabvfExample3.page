@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:sectionHeader title="tab panel"/>
+    <apex:tabPanel value="{!'b'}">
+    <apex:tab id="a" label="tab1" >
+        <apex:iframe src="https://www.google.com"/></apex:tab>
+        <apex:tab id="b" label="tab2">
+            <apex:iframe src="https://www.timesofindia.com"/></apex:tab>
+    </apex:tabPanel></apex:page>

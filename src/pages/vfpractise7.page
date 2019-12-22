@@ -1,0 +1,20 @@
+<apex:page title="practise7" >
+    <style>
+    .one
+        {
+        background:yellow;
+        }
+        .two
+        {
+        background:black;
+        }
+    </style>
+    
+    <apex:sectionHeader title="Tab example" subtitle="practise7"/>
+    <apex:tabPanel headerClass="one" activeTabClass="a">
+    <apex:tab id="a" title="A class" label="A class">
+        <apex:iframe src="https://www.google.com"/>
+        </apex:tab>
+    <apex:tab id="b" title="B class" label="B class">
+        <apex:iframe src="https://www.youtube.com"/></apex:tab></apex:tabPanel>
+</apex:page>

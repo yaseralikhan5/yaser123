@@ -1,0 +1,16 @@
+<apex:page title="practise4" standardController="Loan_BANK__c" recordSetVar="list">
+    <apex:sectionHeader title="Practise4" subtitle="Loan example"/>
+    <apex:form >
+        <apex:pageblock title="Loan details">
+        <apex:pageBlockTable value="{!list}" var="a">
+            <apex:column headerValue="Security">
+                <apex:outputfield value="{!a.Security__c}"/>
+            </apex:column>
+            <apex:column headerValue="Loan type">
+                <apex:outputfield value="{!a.Loan_Type__c}"/>
+            </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

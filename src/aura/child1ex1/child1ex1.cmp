@@ -1,0 +1,8 @@
+<aura:component controller="ex1" >
+    <aura:registerevent name="first" type="c:eventex1"/>
+    <aura:attribute name="search1"  type ="string"/>
+    <lightning:card title="Searching....">
+        <lightning:input label="enter the search value" value="{!v.search1}"/>
+        <lightning:button label="Submit" onclick="{!c.show}"/>
+    </lightning:card>
+</aura:component>

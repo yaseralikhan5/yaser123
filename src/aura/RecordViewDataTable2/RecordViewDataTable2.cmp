@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="fields" type="string[]" default="['Name','Industry','Rating','Phone']"/>
+    <aura:attribute name="acc1" type="Object"/>
+    <aura:attribute name="accmode" type="string"/>
+    <aura:attribute name="newacc1" type="Object"/>
+    <aura:attribute name="recid" type="string"/>
+    <aura:attribute name="flag2" type="boolean"/>
+    <aura:handler event="c:RecordEvent2" action="{!c.invoke1}"/>
+    
+    <aura:if isTrue="{!v.flag2}">
+	<lightning:recordForm aura:id="records" recordId="{!v.recid}" layoutType="Full"
+                          objectApiName="Account" fields="{!v.fields}" 
+                          mode="{!v.accmode}"/>
+     </aura:if>
+</aura:component>

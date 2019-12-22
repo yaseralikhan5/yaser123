@@ -1,0 +1,42 @@
+<apex:page standardController="Candidate_Enquiry__c" extensions="AdminCandidateProject">
+    <apex:sectionHeader title="candidate enquiry edit" subtitle="New Candidate Enquiry"/>
+    <apex:form >
+        <apex:pageblock title="Select the candidate you want to register as student">
+       <apex:pageBlockButtons >
+            <apex:commandButton value="Send to Student" action="{!SendInvoke}"/></apex:pageBlockButtons>
+       
+  <apex:pageBlockSection title="candidate information" collapsible="false">
+        <apex:outputField value="{!c.Candidate_Name__c}"/>
+        <apex:outputField value="{!c.Gender__c}"/>
+        <apex:outputField value="{!c.Guardian__c}"/>
+        <apex:outputField value="{!c.Date_Of_Birth__c}"/>
+        <apex:outputField value="{!c.Guardian_Name__c}"/>
+        <apex:outputField value="{!c.Father_Occupation__c}"/>
+        <apex:outputField value="{!c.Community__c}"/>
+        <apex:outputField value="{!c.Mother_Occupation__c}"/>
+        <apex:outputField value="{!c.Course__c}"/>
+        <apex:outputField value="{!c.Family_Annual_Income__c}"/>
+        <apex:outputField value="{!c.Proof_Submitted__c}"/>
+        <apex:outputField value="{!c.Passport_no__c}"/>
+        </apex:pageBlockSection>
+            <apex:pageBlockSection title="Educational Details" collapsible="false" columns="1">
+            <apex:outputField value="{!c.Educational_Qualification__c}"/>
+                <apex:outputField value="{!c.Year_Of_Passing__c}"/>
+                <apex:outputField value="{!c.Passed_out_Organization__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Details" collapsible="false">
+            <apex:outputField value="{!c.Mobile_No__c}"/>
+                <apex:outputField value="{!c.Father_s_Mobile_No__c}"/>
+                <apex:outputField value="{!c.Address_For_Correspondence__c}"/>
+                <apex:outputField value="{!c.Email__c}"/>
+                <apex:outputField value="{!c.permanent_Address__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Course Information" collapsible="false">
+            <apex:outputField value="{!c.Interested_Course1__c}"/>
+            <apex:outputField value="{!c.Other_Interested_Course__c}"/>
+            <apex:outputField value="{!c.Interested_Course2__c}"/>
+            </apex:pageBlockSection>
+            
+            </apex:pageblock>
+    </apex:form>
+</apex:page>

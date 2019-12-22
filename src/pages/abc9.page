@@ -1,0 +1,23 @@
+<apex:page controller="DynamicQueryDML" >
+    <apex:form id="fm">
+    <apex:pageblock >
+        <apex:selectlist multiselect="true" value="{!selected}">
+            <apex:selectoptions value="{!field}"/>
+        <apex:actionSupport event="onchange" action="{!fetch}" reRender="fm"/>
+        </apex:selectlist>
+       <!-- <apex:pageBlockButtons >
+            <apex:commandbutton value="Submit" action="{!fetch}"/>
+        </apex:pageBlockButtons>-->
+         <apex:datatable value="{!acc}" var="a" border="5" rules="cols" >
+             
+             <apex:repeat value="{!selected}" var="b">
+          <apex:column value="{!a[b]}"/>
+       
+        </apex:repeat>
+             
+        </apex:datatable>
+        
+        </apex:pageblock>
+       
+    </apex:form>
+</apex:page>

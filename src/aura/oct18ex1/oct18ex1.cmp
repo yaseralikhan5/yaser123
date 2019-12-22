@@ -1,0 +1,14 @@
+<aura:component controller="oct18ex1" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    <aura:attribute name="ligmap" type="Map"/>
+    <li>Recent Account</li>
+    <ul>
+    <aura:iteration items="{!v.ligmap.Accrecord}" var="a">
+     <li type="dice">Account= {!a.Name}</li>
+        <hr/>
+        <li type="dice">Industry= {!a.Industry}</li>
+        <hr/>
+    </aura:iteration>
+    </ul>
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component controller="parentchild">
+   <!-- <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account'}"/>-->
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="industry" type="string"/>
+    <aura:attribute name="Rating" type="string"/>
+    <aura:registerEvent name="parentEvent" type="c:ParentChildEvent"/>
+    <lightning:card title="Account Form">
+        <aura:set attribute="actions">
+            <lightning:button label="Save" onclick="{!c.accountSave}"/>
+        </aura:set>
+        <div>
+            <lightning:input label="name" value="{!v.name}" aura:id="name"/>
+            <lightning:input label="Industry" value="{!v.industry}" aura:id="Industry"/>
+            <lightning:input label="Rating" value="{!v.Rating}" aura:id="Rating"/>
+        </div>
+    
+    </lightning:card>
+	
+</aura:component>
